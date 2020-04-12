@@ -4,21 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RoadFighter
 {
-    public partial class GameForm : Form
+    public partial class frmGame : Form
     {
-        GameEngine game = new GameEngine();
+        GameEngine game = new GameEngine();        
 
-        public GameForm()
+        public frmGame()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             tmrSceneTimer.Enabled = false;
             game.sceneTimer = tmrSceneTimer;
@@ -26,7 +25,7 @@ namespace RoadFighter
             game.grassPanel = grass;
             game.car = car;
             //game.roadPanel = road;
-          
+
             game.leftLines[0] = line1;
             game.leftLines[1] = line2;
             game.leftLines[2] = line3;

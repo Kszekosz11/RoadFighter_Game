@@ -21,3 +21,15 @@ D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.GenerateReso
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.CoreCompileInputs.cache
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.exe
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.pdb
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\car.png
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe.config
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.pdb
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csprojAssemblyReference.cache
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.g.resources
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.Properties.Resources.resources
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.GenerateResource.cache
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.exe
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.pdb
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmMenuUI.resources
+E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmGame.resources

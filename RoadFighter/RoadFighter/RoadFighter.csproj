@@ -47,22 +47,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameEngine.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="GameMenuUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GameMenuUI.Designer.cs">
+      <DependentUpon>GameMenuUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuUI.cs">
+    <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUI.Designer.cs">
-      <DependentUpon>MenuUI.cs</DependentUpon>
+    <Compile Include="GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GameMenuUI.resx">
+      <DependentUpon>GameMenuUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +94,17 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\menuGrass.png" />
+    <None Include="Resources\menuBackground.png" />
+    <None Include="Resources\menuCar.png" />
+    <None Include="Resources\tree4.png" />
+    <None Include="Resources\tree3.png" />
+    <None Include="Resources\tree2.png" />
+    <None Include="Resources\tree1.png" />
+    <None Include="Resources\grassTexture.png" />
+    <None Include="Resources\enemyCar.png" />
+    <None Include="Resources\coin.png" />
+    <None Include="Resources\carResized.png" />
     <None Include="Resources\finish.png" />
     <None Include="Resources\explosion.png" />
     <Resource Include="carEffect.wav">
