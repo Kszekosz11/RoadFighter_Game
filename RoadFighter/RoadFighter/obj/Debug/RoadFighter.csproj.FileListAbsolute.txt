@@ -1,0 +1,11 @@
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe.config
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\bin\Debug\RoadFighter.pdb
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csprojAssemblyReference.cache
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.Properties.Resources.resources
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.GenerateResource.cache
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.exe
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.pdb
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\bin\Debug\car.png
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.g.resources
+E:\Semestr IV\Programowanie IV\Projekty\RoadFighter\RoadFighter\obj\Debug\RoadFighter.GameForm.resources
