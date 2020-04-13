@@ -1,6 +1,6 @@
 ﻿namespace RoadFighter
 {
-    partial class frmMenuUI
+    partial class frmMenuForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlBackgroundMenu = new System.Windows.Forms.Panel();
             this.pcbMenuCar = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlBackgroundMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlBackgroundMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::RoadFighter.Properties.Resources.menuBackground2;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pcbMenuCar);
-            this.panel1.Controls.Add(this.pnlMenu);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 643);
-            this.panel1.TabIndex = 3;
+            this.pnlBackgroundMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBackgroundMenu.BackgroundImage = global::RoadFighter.Properties.Resources.menuBackground2;
+            this.pnlBackgroundMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBackgroundMenu.Controls.Add(this.pcbMenuCar);
+            this.pnlBackgroundMenu.Controls.Add(this.pnlMenu);
+            this.pnlBackgroundMenu.Location = new System.Drawing.Point(-1, 0);
+            this.pnlBackgroundMenu.Name = "pnlBackgroundMenu";
+            this.pnlBackgroundMenu.Size = new System.Drawing.Size(573, 643);
+            this.pnlBackgroundMenu.TabIndex = 3;
             // 
             // pcbMenuCar
             // 
@@ -67,7 +67,7 @@
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
             this.pnlMenu.Controls.Add(this.btnQuit);
-            this.pnlMenu.Controls.Add(this.label1);
+            this.pnlMenu.Controls.Add(this.lblName);
             this.pnlMenu.Controls.Add(this.btnStartGame);
             this.pnlMenu.Controls.Add(this.btnOptions);
             this.pnlMenu.Font = new System.Drawing.Font("Snap ITC", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,18 +89,18 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Ravie", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 78);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ROAD\r\nFIGHTER";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblName.Font = new System.Drawing.Font("Ravie", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(72, 39);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(191, 78);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "ROAD\r\nFIGHTER";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStartGame
             // 
@@ -128,18 +128,18 @@
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
             // 
-            // frmMenuUI
+            // frmMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(571, 641);
-            this.Controls.Add(this.panel1);
-            this.Name = "frmMenuUI";
+            this.Controls.Add(this.pnlBackgroundMenu);
+            this.Name = "frmMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoadFighter";
-            this.panel1.ResumeLayout(false);
+            this.pnlBackgroundMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
@@ -149,11 +149,11 @@
 
         #endregion
         private System.Windows.Forms.Button btnStartGame;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnOptions;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBackgroundMenu;
         private System.Windows.Forms.PictureBox pcbMenuCar;
     }
 }

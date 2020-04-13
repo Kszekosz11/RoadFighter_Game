@@ -9,148 +9,155 @@ using System.Windows.Forms;
 namespace RoadFighter
 {
     public class GameEngine
-    {
-        private static int treesQuantity = 4;
-        public PictureBox[] trees = new PictureBox[treesQuantity];
+    {   
+        public PictureBox Car { get; set; }
+        public PictureBox Coin { get; set; }
+        public PictureBox EnemyCar { get; set; }
+        public PictureBox FinishLine { get; set; }
+        public Panel LeftLines { get; set; }
+        public Panel RightLines { get; set; }
+        public Panel Grass { get; set; }
+        public Panel Road { get; set; }
+        public Label Points { get; set; }
+        public Label Time { get; set; }
+        public Timer SceneTimer { get; set; }
+        public Timer GameTimer { get; set; }
+        public Timer FinishGame { get; set; }
+        private int PointQuantity { get; set; }
+        private int Ticks { get; set; }
+        private int Distance { get; set; }
 
-        private static int linesQuantity = 5;
-        public PictureBox[] leftLines = new PictureBox[linesQuantity];
 
-        public PictureBox pcb = new PictureBox();
-
-        public PictureBox[] rightLines = new PictureBox[linesQuantity];
-
-        public Panel grassPanel;
-        public Panel roadPanel;
-        public PictureBox car;
-
-        public Timer sceneTimer;
-        public PictureBox enemy;
-
-        public PictureBox coin;
-
-        public Label helper;
-        public Label points;
-        private int pointsQuantity = 0;
-
-        public Label time;
-        public Timer gameTimer;
-        private int ticks;
-
-        public PictureBox finishLine;
-
-        Random random = new Random();        
+        Random random = new Random();
 
         public double speed = 5.0;
         private double speedMax = 10.0;
         private double speedMin = 1.0;
-        
-        public void drawTrees(double speed)
-        {
-            if (grassPanel.Top >= 1500)
-            {
-                grassPanel.Top = -1500;
-            }
-            else grassPanel.Top += (int)speed;
 
-            //for (int i = 0; i < treesQuantity; i++)
-            //{
-            //    if (trees[i].Top >= 2000)
-            //    {
-            //        trees[i].Top = 0;
-            //    }
-            //    else trees[i].Top += speed;
-            //}            
+        public GameEngine(frmGame game)
+        {
+            Car = game.pcbCar;            
+            EnemyCar = game.pcbEnemyCar;            
+            Coin = game.pcbCoin;
+            LeftLines = game.pnlLeftLines;
+            RightLines = game.pnlRightLines;
+            Grass = game.pnlGrass;
+            Road = game.pnlRoad;
+            Points = game.lblPoints;
+            Time = game.lblTime;
+            FinishLine = game.pcbFinishLine;
+            SceneTimer = game.tmrSceneTimer;
+            GameTimer = game.tmrGameTimer;
+            FinishGame = game.tmrFinishGame;
+            PointQuantity = 0;
+            Ticks = 0;
+            Distance = 10;
+
+            EnemyCar.Location = randomLocation();
         }
 
-        
+        public void drawTrees(double speed)
+        {
+            if (Grass.Top >= 1500)
+            {
+                Grass.Top = -1500;
+            }
+            else Grass.Top += (int)speed;
+        }
+
         public void drawLines(double speed)
         {
-            for (int i = 0; i < leftLines.Length; i++)
+            if ((LeftLines.Top >= 138) && (RightLines.Top >= 138))
             {
-                if (leftLines[i].Top >= 680)
-                {
-                    leftLines[i].Top = 0;
-                }
-                else leftLines[i].Top += (int)speed;
+                LeftLines.Top = 0;
+                RightLines.Top = 0;
             }
-
-            for (int i = 0; i < linesQuantity; i++)
+            else 
             {
-                if (rightLines[i].Top >= 680)
-                {
-                    rightLines[i].Top = 0;
-                }
-                else rightLines[i].Top += (int)speed;
+                LeftLines.Top += (int)speed;
+                RightLines.Top += (int)speed;
             }
         }
 
         public void gameTime()
         {
-            time.Visible = true;
-            ticks++;
-            time.Text = "Time: " + ticks.ToString();
+            Time.Visible = true;
+            Ticks++;
+            Time.Text = "Time: " + Ticks.ToString();
         }
 
-        public void finishGame()
+        public void showFinishLine()
         {
-            if (ticks > 2)
+            if (Ticks > 10)
             {
-                finishLine.Visible = true;
-                if (car.Bounds.IntersectsWith(finishLine.Bounds))
+                FinishLine.Visible = true;
+                if (Car.Bounds.IntersectsWith(FinishLine.Bounds))
                 {
-                    helper.Text = "WIN";
-                    sceneTimer.Stop();
+                    SceneTimer.Stop();
+                    GameTimer.Stop();
+                    FinishGame.Enabled = true;
                 }
             }
         }
 
-        public void enemyControl(double speed)
+        public void finishGame(double speed)
+        {            
+            Car.Top -= (int)speed;
+        }
+
+        public void enemyCarControl(double speed)
         {
-            if (enemy.Top > 680)
+            if (EnemyCar.Top > Road.Height)
             {
-                enemy.Location = new Point(random.Next(50,300),0);
+                EnemyCar.Location = randomLocation();
             }
-            else enemy.Top += 5;
+            else EnemyCar.Top += 5;
         }
 
         public void coinControl(double speed)
         {
-            if (coin.Top > 680)
+            if (Coin.Top > Road.Height)
             {
-                coin.Location = new Point(random.Next(80, 600), 0);
-                if (coin.Bounds.IntersectsWith(enemy.Bounds))
+                Coin.Location = randomLocation();
+                if (Coin.Bounds.IntersectsWith(EnemyCar.Bounds))
                 {
-                    coin.Location = new Point(random.Next(80, 600), 0);
-                    
+                    Coin.Location = randomLocation();
                 }
-                coin.Visible = true;
+                Coin.Visible = true;
             }
-            else coin.Top += 5;
+            else Coin.Top += 5;
         }
 
         public void coinCollected()
         {
-            if (car.Bounds.IntersectsWith(coin.Bounds))
+            if (Car.Bounds.IntersectsWith(Coin.Bounds))
             {
-                points.Visible = true;
-                pointsQuantity++;
-                points.Text = "Points: " + pointsQuantity.ToString();
-                coin.Visible = false;
+                Points.Visible = true;
+                PointQuantity++;
+                Points.Text = "Points: " + PointQuantity.ToString();
+                Coin.Visible = false;
 
-                coin.Location = new Point(random.Next(0), 700);
+                Coin.Location = randomLocation();
             }
+        }
+
+        private Point randomLocation()
+        {
+            return new Point(random.Next(EnemyCar.Width, Road.Width - EnemyCar.Width), -200);
         }
 
         public void gameOver(Form menuUI)
         {
-            if (car.Bounds.IntersectsWith(enemy.Bounds))
+            if (Car.Bounds.IntersectsWith(EnemyCar.Bounds))
             {
-                car.Image = Properties.Resources.explosion;
-                sceneTimer.Enabled = false;
-                helper.Text = "GAME OVER";
-                helper.Visible = true;
+                Car.Image = Properties.Resources.explosion;
+                SceneTimer.Enabled = false;
             }
+            
+            //
+            //  OPRACOWAĆ KONIEC GRY
+            //  OKNO ZAMYKAJĄCE GRE, RESTARTUJĄCE LUB WRACAJĄCE GO MENU GŁOWNEGO
+            //
         }
 
         public void carControl(KeyEventArgs e)
@@ -158,48 +165,45 @@ namespace RoadFighter
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    if (car.Left > 4) car.Left -= 10;
+                    if (Car.Left > Distance) Car.Left -= 10;
                     break;
                 case Keys.Right:
-                    if (car.Right < 392) car.Left += 10;
+                    if (Car.Right < Road.Width - Distance) Car.Left += 10;
                     break;
                 case Keys.Up:
-                    sceneTimer.Enabled = true;
-                    if (gameTimer.Enabled == false)
+                    SceneTimer.Enabled = true;
+                    if (GameTimer.Enabled == false)
                     {
-                        gameTimer.Start();
-                    }                    
-                    if (car.Top > 50)
+                        GameTimer.Start();
+                    }
+                    if (Car.Top > FinishLine.Top)
                     {
                         if (speed <= speedMax)
                         {
                             speed += 0.5;
                         }
-                        car.Top -= 5;
+                        Car.Top -= 5;
                     }
                     break;
                 case Keys.Down:
-                    if (car.Top < 554)
+                    if (Car.Top < Road.Height - Car.Height - Distance)
                     {
                         if (speed >= speedMin)
                         {
                             speed -= 0.1;
-                            car.Top += 5;
+                            Car.Top += 5;
                         }
                     }
                     break;
                 case Keys.Space:
-                    if (sceneTimer.Enabled == true)
+                    if (SceneTimer.Enabled == true)
                     {
-                        sceneTimer.Stop();
-                        helper.Text = "PAUSE";
-                        helper.Visible = true;
+                        SceneTimer.Stop();
                     }
                     else
                     {
-                        helper.Visible = false;
-                        sceneTimer.Start();
-                    }   
+                        SceneTimer.Start();
+                    }
                     break;
                 default:
                     break;

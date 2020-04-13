@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RoadFighter
 {
-    public partial class frmMenuUI : Form
+    public partial class frmMenuForm : Form
     {
-        public frmMenuUI()
+        public frmMenuForm()
         {
             InitializeComponent();            
             this.FormBorderStyle = FormBorderStyle.FixedSingle;            

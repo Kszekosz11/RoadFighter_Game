@@ -16,7 +16,7 @@ namespace RoadFighter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenuUI());
+            Application.Run(new frmMenuForm());
         }
     }
 }
