@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameEngine.cs" />
-    <Compile Include="GameMenuUI.cs">
+    <Compile Include="MenuGameUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameMenuUI.Designer.cs">
-      <DependentUpon>GameMenuUI.cs</DependentUpon>
+    <Compile Include="MenuGameUI.Designer.cs">
+      <DependentUpon>MenuGameUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
@@ -61,8 +61,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GameMenuUI.resx">
-      <DependentUpon>GameMenuUI.cs</DependentUpon>
+    <EmbeddedResource Include="MenuGameUI.resx">
+      <DependentUpon>MenuGameUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
@@ -94,22 +94,21 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\menuGrass.png" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\enemyCar.png" />
+    <None Include="Resources\carResized.png" />
+    <None Include="Resources\menuBackground2.png" />
     <None Include="Resources\menuBackground.png" />
+    <None Include="Resources\menuGrass.png" />
     <None Include="Resources\menuCar.png" />
     <None Include="Resources\tree4.png" />
     <None Include="Resources\tree3.png" />
     <None Include="Resources\tree2.png" />
     <None Include="Resources\tree1.png" />
     <None Include="Resources\grassTexture.png" />
-    <None Include="Resources\enemyCar.png" />
     <None Include="Resources\coin.png" />
-    <None Include="Resources\carResized.png" />
     <None Include="Resources\finish.png" />
     <None Include="Resources\explosion.png" />
-    <Resource Include="carEffect.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

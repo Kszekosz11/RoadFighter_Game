@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.tmrSceneTimer = new System.Windows.Forms.Timer(this.components);
             this.road = new System.Windows.Forms.Panel();
-            this.lblGameTime = new System.Windows.Forms.Label();
-            this.lblPoints = new System.Windows.Forms.Label();
-            this.lblHelper = new System.Windows.Forms.Label();
-            this.tmrGameTimer = new System.Windows.Forms.Timer(this.components);
-            this.grass = new System.Windows.Forms.Panel();
             this.car = new System.Windows.Forms.PictureBox();
             this.pcbFinish = new System.Windows.Forms.PictureBox();
+            this.lblGameTime = new System.Windows.Forms.Label();
+            this.lblPoints = new System.Windows.Forms.Label();
             this.pcbCoin = new System.Windows.Forms.PictureBox();
+            this.lblHelper = new System.Windows.Forms.Label();
             this.pcbEnemy1 = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.PictureBox();
             this.line7 = new System.Windows.Forms.PictureBox();
@@ -50,13 +49,14 @@
             this.line10 = new System.Windows.Forms.PictureBox();
             this.line5 = new System.Windows.Forms.PictureBox();
             this.line6 = new System.Windows.Forms.PictureBox();
+            this.tmrGameTimer = new System.Windows.Forms.Timer(this.components);
+            this.grass = new System.Windows.Forms.Panel();
             this.tree4 = new System.Windows.Forms.PictureBox();
             this.tree1 = new System.Windows.Forms.PictureBox();
             this.tree2 = new System.Windows.Forms.PictureBox();
             this.tree3 = new System.Windows.Forms.PictureBox();
             this.underGrass = new System.Windows.Forms.PictureBox();
             this.road.SuspendLayout();
-            this.grass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.car)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
@@ -71,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.line10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.line6)).BeginInit();
+            this.grass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tree4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree2)).BeginInit();
@@ -109,6 +110,29 @@
             this.road.Size = new System.Drawing.Size(400, 640);
             this.road.TabIndex = 21;
             // 
+            // car
+            // 
+            this.car.BackColor = System.Drawing.Color.Transparent;
+            this.car.BackgroundImage = global::RoadFighter.Properties.Resources.car;
+            this.car.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.car.Location = new System.Drawing.Point(175, 547);
+            this.car.Name = "car";
+            this.car.Size = new System.Drawing.Size(50, 85);
+            this.car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car.TabIndex = 12;
+            this.car.TabStop = false;
+            // 
+            // pcbFinish
+            // 
+            this.pcbFinish.BackgroundImage = global::RoadFighter.Properties.Resources.finish;
+            this.pcbFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbFinish.Location = new System.Drawing.Point(0, 40);
+            this.pcbFinish.Name = "pcbFinish";
+            this.pcbFinish.Size = new System.Drawing.Size(400, 50);
+            this.pcbFinish.TabIndex = 22;
+            this.pcbFinish.TabStop = false;
+            this.pcbFinish.Visible = false;
+            // 
             // lblGameTime
             // 
             this.lblGameTime.AutoSize = true;
@@ -131,6 +155,16 @@
             this.lblPoints.Text = "points";
             this.lblPoints.Visible = false;
             // 
+            // pcbCoin
+            // 
+            this.pcbCoin.BackgroundImage = global::RoadFighter.Properties.Resources.coin;
+            this.pcbCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbCoin.Location = new System.Drawing.Point(184, 294);
+            this.pcbCoin.Name = "pcbCoin";
+            this.pcbCoin.Size = new System.Drawing.Size(30, 30);
+            this.pcbCoin.TabIndex = 15;
+            this.pcbCoin.TabStop = false;
+            // 
             // lblHelper
             // 
             this.lblHelper.AutoSize = true;
@@ -142,6 +176,116 @@
             this.lblHelper.Text = "GAMEHELPER";
             this.lblHelper.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblHelper.Visible = false;
+            // 
+            // pcbEnemy1
+            // 
+            this.pcbEnemy1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemy1.BackgroundImage")));
+            this.pcbEnemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEnemy1.Location = new System.Drawing.Point(30, 174);
+            this.pcbEnemy1.Name = "pcbEnemy1";
+            this.pcbEnemy1.Size = new System.Drawing.Size(50, 85);
+            this.pcbEnemy1.TabIndex = 13;
+            this.pcbEnemy1.TabStop = false;
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.White;
+            this.line1.Location = new System.Drawing.Point(110, 0);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(18, 80);
+            this.line1.TabIndex = 0;
+            this.line1.TabStop = false;
+            this.line1.Tag = "4";
+            // 
+            // line7
+            // 
+            this.line7.BackColor = System.Drawing.Color.White;
+            this.line7.Location = new System.Drawing.Point(273, 138);
+            this.line7.Name = "line7";
+            this.line7.Size = new System.Drawing.Size(18, 80);
+            this.line7.TabIndex = 10;
+            this.line7.TabStop = false;
+            this.line7.Tag = "3";
+            // 
+            // line2
+            // 
+            this.line2.BackColor = System.Drawing.Color.White;
+            this.line2.Location = new System.Drawing.Point(110, 137);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(18, 80);
+            this.line2.TabIndex = 1;
+            this.line2.TabStop = false;
+            this.line2.Tag = "3";
+            // 
+            // line8
+            // 
+            this.line8.BackColor = System.Drawing.Color.White;
+            this.line8.Location = new System.Drawing.Point(273, 276);
+            this.line8.Name = "line8";
+            this.line8.Size = new System.Drawing.Size(18, 80);
+            this.line8.TabIndex = 9;
+            this.line8.TabStop = false;
+            this.line8.Tag = "2";
+            // 
+            // line3
+            // 
+            this.line3.BackColor = System.Drawing.Color.White;
+            this.line3.Location = new System.Drawing.Point(110, 274);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(18, 80);
+            this.line3.TabIndex = 2;
+            this.line3.TabStop = false;
+            this.line3.Tag = "2";
+            // 
+            // line9
+            // 
+            this.line9.BackColor = System.Drawing.Color.White;
+            this.line9.Location = new System.Drawing.Point(273, 414);
+            this.line9.Name = "line9";
+            this.line9.Size = new System.Drawing.Size(18, 80);
+            this.line9.TabIndex = 8;
+            this.line9.TabStop = false;
+            this.line9.Tag = "1";
+            // 
+            // line4
+            // 
+            this.line4.BackColor = System.Drawing.Color.White;
+            this.line4.Location = new System.Drawing.Point(110, 411);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(18, 80);
+            this.line4.TabIndex = 3;
+            this.line4.TabStop = false;
+            this.line4.Tag = "1";
+            // 
+            // line10
+            // 
+            this.line10.BackColor = System.Drawing.Color.White;
+            this.line10.Location = new System.Drawing.Point(273, 552);
+            this.line10.Name = "line10";
+            this.line10.Size = new System.Drawing.Size(18, 80);
+            this.line10.TabIndex = 7;
+            this.line10.TabStop = false;
+            this.line10.Tag = "0";
+            // 
+            // line5
+            // 
+            this.line5.BackColor = System.Drawing.Color.White;
+            this.line5.Location = new System.Drawing.Point(110, 548);
+            this.line5.Name = "line5";
+            this.line5.Size = new System.Drawing.Size(18, 80);
+            this.line5.TabIndex = 4;
+            this.line5.TabStop = false;
+            this.line5.Tag = "0";
+            // 
+            // line6
+            // 
+            this.line6.BackColor = System.Drawing.Color.White;
+            this.line6.Location = new System.Drawing.Point(273, 0);
+            this.line6.Name = "line6";
+            this.line6.Size = new System.Drawing.Size(18, 80);
+            this.line6.TabIndex = 11;
+            this.line6.TabStop = false;
+            this.line6.Tag = "4";
             // 
             // tmrGameTimer
             // 
@@ -162,139 +306,6 @@
             this.grass.Size = new System.Drawing.Size(180, 640);
             this.grass.TabIndex = 20;
             // 
-            // car
-            // 
-            this.car.BackColor = System.Drawing.Color.Transparent;
-            this.car.BackgroundImage = global::RoadFighter.Properties.Resources.carResized;
-            this.car.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.car.Location = new System.Drawing.Point(174, 554);
-            this.car.Name = "car";
-            this.car.Size = new System.Drawing.Size(55, 75);
-            this.car.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.car.TabIndex = 12;
-            this.car.TabStop = false;
-            // 
-            // pcbFinish
-            // 
-            this.pcbFinish.BackgroundImage = global::RoadFighter.Properties.Resources.finish;
-            this.pcbFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbFinish.Location = new System.Drawing.Point(0, 40);
-            this.pcbFinish.Name = "pcbFinish";
-            this.pcbFinish.Size = new System.Drawing.Size(400, 50);
-            this.pcbFinish.TabIndex = 22;
-            this.pcbFinish.TabStop = false;
-            this.pcbFinish.Visible = false;
-            // 
-            // pcbCoin
-            // 
-            this.pcbCoin.BackgroundImage = global::RoadFighter.Properties.Resources.coin;
-            this.pcbCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbCoin.Location = new System.Drawing.Point(184, 294);
-            this.pcbCoin.Name = "pcbCoin";
-            this.pcbCoin.Size = new System.Drawing.Size(30, 30);
-            this.pcbCoin.TabIndex = 15;
-            this.pcbCoin.TabStop = false;
-            // 
-            // pcbEnemy1
-            // 
-            this.pcbEnemy1.BackgroundImage = global::RoadFighter.Properties.Resources.enemyCar;
-            this.pcbEnemy1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbEnemy1.Location = new System.Drawing.Point(30, 174);
-            this.pcbEnemy1.Name = "pcbEnemy1";
-            this.pcbEnemy1.Size = new System.Drawing.Size(49, 86);
-            this.pcbEnemy1.TabIndex = 13;
-            this.pcbEnemy1.TabStop = false;
-            // 
-            // line1
-            // 
-            this.line1.BackColor = System.Drawing.Color.White;
-            this.line1.Location = new System.Drawing.Point(110, 0);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(18, 80);
-            this.line1.TabIndex = 0;
-            this.line1.TabStop = false;
-            // 
-            // line7
-            // 
-            this.line7.BackColor = System.Drawing.Color.White;
-            this.line7.Location = new System.Drawing.Point(273, 138);
-            this.line7.Name = "line7";
-            this.line7.Size = new System.Drawing.Size(18, 80);
-            this.line7.TabIndex = 10;
-            this.line7.TabStop = false;
-            // 
-            // line2
-            // 
-            this.line2.BackColor = System.Drawing.Color.White;
-            this.line2.Location = new System.Drawing.Point(110, 137);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(18, 80);
-            this.line2.TabIndex = 1;
-            this.line2.TabStop = false;
-            // 
-            // line8
-            // 
-            this.line8.BackColor = System.Drawing.Color.White;
-            this.line8.Location = new System.Drawing.Point(273, 276);
-            this.line8.Name = "line8";
-            this.line8.Size = new System.Drawing.Size(18, 80);
-            this.line8.TabIndex = 9;
-            this.line8.TabStop = false;
-            // 
-            // line3
-            // 
-            this.line3.BackColor = System.Drawing.Color.White;
-            this.line3.Location = new System.Drawing.Point(110, 274);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(18, 80);
-            this.line3.TabIndex = 2;
-            this.line3.TabStop = false;
-            // 
-            // line9
-            // 
-            this.line9.BackColor = System.Drawing.Color.White;
-            this.line9.Location = new System.Drawing.Point(273, 414);
-            this.line9.Name = "line9";
-            this.line9.Size = new System.Drawing.Size(18, 80);
-            this.line9.TabIndex = 8;
-            this.line9.TabStop = false;
-            // 
-            // line4
-            // 
-            this.line4.BackColor = System.Drawing.Color.White;
-            this.line4.Location = new System.Drawing.Point(110, 411);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(18, 80);
-            this.line4.TabIndex = 3;
-            this.line4.TabStop = false;
-            // 
-            // line10
-            // 
-            this.line10.BackColor = System.Drawing.Color.White;
-            this.line10.Location = new System.Drawing.Point(273, 552);
-            this.line10.Name = "line10";
-            this.line10.Size = new System.Drawing.Size(18, 80);
-            this.line10.TabIndex = 7;
-            this.line10.TabStop = false;
-            // 
-            // line5
-            // 
-            this.line5.BackColor = System.Drawing.Color.White;
-            this.line5.Location = new System.Drawing.Point(110, 548);
-            this.line5.Name = "line5";
-            this.line5.Size = new System.Drawing.Size(18, 80);
-            this.line5.TabIndex = 4;
-            this.line5.TabStop = false;
-            // 
-            // line6
-            // 
-            this.line6.BackColor = System.Drawing.Color.White;
-            this.line6.Location = new System.Drawing.Point(273, 0);
-            this.line6.Name = "line6";
-            this.line6.Size = new System.Drawing.Size(18, 80);
-            this.line6.TabIndex = 11;
-            this.line6.TabStop = false;
-            // 
             // tree4
             // 
             this.tree4.BackColor = System.Drawing.Color.Transparent;
@@ -305,7 +316,7 @@
             this.tree4.Size = new System.Drawing.Size(90, 90);
             this.tree4.TabIndex = 17;
             this.tree4.TabStop = false;
-            this.tree4.Tag = "3";
+            this.tree4.Tag = "";
             // 
             // tree1
             // 
@@ -317,7 +328,7 @@
             this.tree1.Size = new System.Drawing.Size(90, 90);
             this.tree1.TabIndex = 14;
             this.tree1.TabStop = false;
-            this.tree1.Tag = "0";
+            this.tree1.Tag = "";
             // 
             // tree2
             // 
@@ -329,7 +340,7 @@
             this.tree2.Size = new System.Drawing.Size(90, 90);
             this.tree2.TabIndex = 15;
             this.tree2.TabStop = false;
-            this.tree2.Tag = "1";
+            this.tree2.Tag = "";
             // 
             // tree3
             // 
@@ -341,7 +352,7 @@
             this.tree3.Size = new System.Drawing.Size(90, 90);
             this.tree3.TabIndex = 16;
             this.tree3.TabStop = false;
-            this.tree3.Tag = "2";
+            this.tree3.Tag = "";
             // 
             // underGrass
             // 
@@ -363,11 +374,11 @@
             this.Controls.Add(this.grass);
             this.Controls.Add(this.underGrass);
             this.Name = "frmGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoadFighter";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keysHandling);
             this.road.ResumeLayout(false);
             this.road.PerformLayout();
-            this.grass.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.car)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).EndInit();
@@ -382,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.line10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.line6)).EndInit();
+            this.grass.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tree4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree2)).EndInit();
@@ -403,7 +415,6 @@
         private System.Windows.Forms.PictureBox line7;
         private System.Windows.Forms.PictureBox line8;
         private System.Windows.Forms.PictureBox line9;
-        private System.Windows.Forms.PictureBox line10;
         private System.Windows.Forms.PictureBox car;
         private System.Windows.Forms.PictureBox tree1;
         private System.Windows.Forms.PictureBox tree2;
@@ -419,6 +430,7 @@
         private System.Windows.Forms.Timer tmrGameTimer;
         private System.Windows.Forms.PictureBox underGrass;
         private System.Windows.Forms.PictureBox pcbFinish;
+        private System.Windows.Forms.PictureBox line10;
     }
 }
 

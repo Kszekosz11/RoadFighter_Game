@@ -63,9 +63,9 @@ namespace RoadFighter.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carResized {
+        internal static System.Drawing.Bitmap car {
             get {
-                object obj = ResourceManager.GetObject("carResized", resourceCulture);
+                object obj = ResourceManager.GetObject("car", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +126,16 @@ namespace RoadFighter.Properties {
         internal static System.Drawing.Bitmap menuBackground {
             get {
                 object obj = ResourceManager.GetObject("menuBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuBackground2 {
+            get {
+                object obj = ResourceManager.GetObject("menuBackground2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -26,7 +26,6 @@ E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\Roa
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.pdb
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csprojAssemblyReference.cache
-E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.g.resources
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.Properties.Resources.resources
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.GenerateResource.cache
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.exe

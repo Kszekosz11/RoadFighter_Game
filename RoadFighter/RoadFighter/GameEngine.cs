@@ -15,6 +15,9 @@ namespace RoadFighter
 
         private static int linesQuantity = 5;
         public PictureBox[] leftLines = new PictureBox[linesQuantity];
+
+        public PictureBox pcb = new PictureBox();
+
         public PictureBox[] rightLines = new PictureBox[linesQuantity];
 
         public Panel grassPanel;
@@ -36,7 +39,7 @@ namespace RoadFighter
 
         public PictureBox finishLine;
 
-        Random random = new Random();
+        Random random = new Random();        
 
         public double speed = 5.0;
         private double speedMax = 10.0;
@@ -50,7 +53,6 @@ namespace RoadFighter
             }
             else grassPanel.Top += (int)speed;
 
-
             //for (int i = 0; i < treesQuantity; i++)
             //{
             //    if (trees[i].Top >= 2000)
@@ -58,20 +60,13 @@ namespace RoadFighter
             //        trees[i].Top = 0;
             //    }
             //    else trees[i].Top += speed;
-            //}
+            //}            
         }
 
-
+        
         public void drawLines(double speed)
         {
-            //if (roadPanel.Top > roadPanel.Height)
-            //{
-            //    roadPanel.Top = 0;
-            //}
-            //else roadPanel.Top += speed;
-
-
-            for (int i = 0; i < linesQuantity; i++)
+            for (int i = 0; i < leftLines.Length; i++)
             {
                 if (leftLines[i].Top >= 680)
                 {
@@ -95,7 +90,6 @@ namespace RoadFighter
             time.Visible = true;
             ticks++;
             time.Text = "Time: " + ticks.ToString();
-            
         }
 
         public void finishGame()
@@ -109,7 +103,6 @@ namespace RoadFighter
                     sceneTimer.Stop();
                 }
             }
-
         }
 
         public void enemyControl(double speed)
@@ -126,6 +119,11 @@ namespace RoadFighter
             if (coin.Top > 680)
             {
                 coin.Location = new Point(random.Next(80, 600), 0);
+                if (coin.Bounds.IntersectsWith(enemy.Bounds))
+                {
+                    coin.Location = new Point(random.Next(80, 600), 0);
+                    
+                }
                 coin.Visible = true;
             }
             else coin.Top += 5;
@@ -144,7 +142,7 @@ namespace RoadFighter
             }
         }
 
-        public void gameOver()
+        public void gameOver(Form menuUI)
         {
             if (car.Bounds.IntersectsWith(enemy.Bounds))
             {
@@ -201,9 +199,7 @@ namespace RoadFighter
                     {
                         helper.Visible = false;
                         sceneTimer.Start();
-                    }
-                    
-                
+                    }   
                     break;
                 default:
                     break;
