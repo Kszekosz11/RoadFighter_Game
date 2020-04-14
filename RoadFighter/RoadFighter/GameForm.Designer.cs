@@ -58,6 +58,7 @@
             this.pnlRightLines = new System.Windows.Forms.Panel();
             this.pnlUnderGrass = new System.Windows.Forms.Panel();
             this.tmrFinishGame = new System.Windows.Forms.Timer(this.components);
+            this.pnlTest = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinishLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
@@ -107,7 +108,7 @@
             this.pcbFinishLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbFinishLine.Location = new System.Drawing.Point(-1, 36);
             this.pcbFinishLine.Name = "pcbFinishLine";
-            this.pcbFinishLine.Size = new System.Drawing.Size(392, 50);
+            this.pcbFinishLine.Size = new System.Drawing.Size(401, 50);
             this.pcbFinishLine.TabIndex = 22;
             this.pcbFinishLine.TabStop = false;
             this.pcbFinishLine.Visible = false;
@@ -373,12 +374,20 @@
             // 
             this.tmrFinishGame.Tick += new System.EventHandler(this.tmrFinishGame_Tick);
             // 
+            // pnlTest
+            // 
+            this.pnlTest.Location = new System.Drawing.Point(0, 0);
+            this.pnlTest.Name = "pnlTest";
+            this.pnlTest.Size = new System.Drawing.Size(59, 640);
+            this.pnlTest.TabIndex = 25;
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(571, 641);
+            this.Controls.Add(this.pnlTest);
             this.Controls.Add(this.pnlRoad);
             this.Controls.Add(this.pnlUnderGrass);
             this.Name = "frmGame";
@@ -442,6 +451,7 @@
         public System.Windows.Forms.Panel pnlRightLines;
         private System.Windows.Forms.Panel pnlUnderGrass;
         public System.Windows.Forms.Timer tmrFinishGame;
+        private System.Windows.Forms.Panel pnlTest;
     }
 }
 
