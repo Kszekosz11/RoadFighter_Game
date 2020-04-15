@@ -13,8 +13,7 @@ namespace RoadFighter
     public partial class frmGame : Form
     {
         public frmMenuForm MenuUI { get; }
-        public GameEngine Game { get; set; }
-        //public Form NewGame { get; set; }
+        public GameEngine Game { get; set; }  
 
         public frmGame(frmMenuForm menuUI)
         {
@@ -27,26 +26,19 @@ namespace RoadFighter
             Game = new GameEngine(this, MenuUI);           
         }
 
-        //public frmGame(frmGame newGame)
-        //{
-        //    InitializeComponent();
-        //    this.FormBorderStyle = FormBorderStyle.FixedSingle;
-        //    tmrSceneTimer.Enabled = false;
-        //    tmrGameTimer.Enabled = false;
-        //    tmrFinishGame.Enabled = false;
-        //    NewGame = newGame;
-        //    Game = new GameEngine(this);
-        //}
-
         private void sceneTimer_Tick(object sender, EventArgs e)
         {
-            Game.drawLines(Game.speed);
-            Game.drawTrees(Game.speed);
-            Game.enemyCarControl(Game.speed);
+            Game.drawLines(Game.SpeedGame);
+            Game.drawTrees(Game.SpeedGame);
+            Game.enemyCarControl(Game.SpeedGame);
             Game.gameOver(MenuUI);
             Game.coinCollected();
-            Game.coinControl(Game.speed);
+            Game.coinControl(Game.SpeedGame);
+
+            Game.distanceToFinish();
+
             Game.showFinishLine();
+            
         }
 
         private void keysHandling(object sender, KeyEventArgs e)
@@ -57,11 +49,13 @@ namespace RoadFighter
         private void tmrGameTimer_Tick(object sender, EventArgs e)
         {
             Game.gameTime();
+            
+            Game.routeDistanceMiniCar(Game.SpeedGame);
         }
 
         private void tmrFinishGame_Tick(object sender, EventArgs e)
         {
-            Game.finishGame(Game.speed);
+            Game.finishGame(Game.SpeedGame);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
