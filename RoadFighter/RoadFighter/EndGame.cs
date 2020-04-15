@@ -13,14 +13,15 @@ namespace RoadFighter
     public partial class frmEndGame : Form
     {
         public frmMenuForm MenuUI { get; }
-        public frmGame ActualGame { get; }    
+        public frmGame ActualGame { get; }        
 
-        public frmEndGame(frmGame game, frmMenuForm menuUI)
+        public frmEndGame(frmGame game, frmMenuForm menuUI, string description)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             ActualGame = game;
             MenuUI = menuUI;
+            lblDescription.Text = description;
         }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
@@ -42,6 +43,11 @@ namespace RoadFighter
             this.Close();
             ActualGame.Close();
             MenuUI.Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            ActualGame.Close();
         }
     }
 }

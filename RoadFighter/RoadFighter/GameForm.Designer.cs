@@ -59,6 +59,9 @@
             this.pnlUnderGrass = new System.Windows.Forms.Panel();
             this.tmrFinishGame = new System.Windows.Forms.Timer(this.components);
             this.pnlTest = new System.Windows.Forms.Panel();
+            this.pcbMiniCar = new System.Windows.Forms.PictureBox();
+            this.pcbMiniFinishLine = new System.Windows.Forms.PictureBox();
+            this.lblDistance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinishLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
@@ -82,6 +85,9 @@
             this.pnlLeftLines.SuspendLayout();
             this.pnlRightLines.SuspendLayout();
             this.pnlUnderGrass.SuspendLayout();
+            this.pnlTest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiniCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiniFinishLine)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrSceneTimer
@@ -122,7 +128,6 @@
             this.lblTime.Size = new System.Drawing.Size(49, 24);
             this.lblTime.TabIndex = 17;
             this.lblTime.Text = "time";
-            this.lblTime.Visible = false;
             // 
             // lblPoints
             // 
@@ -133,7 +138,6 @@
             this.lblPoints.Size = new System.Drawing.Size(66, 24);
             this.lblPoints.TabIndex = 16;
             this.lblPoints.Text = "points";
-            this.lblPoints.Visible = false;
             // 
             // pcbCoin
             // 
@@ -324,8 +328,9 @@
             // 
             // pnlRoad
             // 
-            this.pnlRoad.Controls.Add(this.pcbCar);
             this.pnlRoad.Controls.Add(this.pcbEnemyCar);
+            this.pnlRoad.Controls.Add(this.lblDistance);
+            this.pnlRoad.Controls.Add(this.pcbCar);
             this.pnlRoad.Controls.Add(this.pcbCoin);
             this.pnlRoad.Controls.Add(this.pcbFinishLine);
             this.pnlRoad.Controls.Add(this.lblPoints);
@@ -376,10 +381,44 @@
             // 
             // pnlTest
             // 
+            this.pnlTest.Controls.Add(this.pcbMiniCar);
+            this.pnlTest.Controls.Add(this.pcbMiniFinishLine);
             this.pnlTest.Location = new System.Drawing.Point(0, 0);
             this.pnlTest.Name = "pnlTest";
-            this.pnlTest.Size = new System.Drawing.Size(59, 640);
+            this.pnlTest.Size = new System.Drawing.Size(60, 640);
             this.pnlTest.TabIndex = 25;
+            // 
+            // pcbMiniCar
+            // 
+            this.pcbMiniCar.BackColor = System.Drawing.Color.Transparent;
+            this.pcbMiniCar.BackgroundImage = global::RoadFighter.Properties.Resources.car;
+            this.pcbMiniCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbMiniCar.Location = new System.Drawing.Point(17, 580);
+            this.pcbMiniCar.Name = "pcbMiniCar";
+            this.pcbMiniCar.Size = new System.Drawing.Size(26, 50);
+            this.pcbMiniCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbMiniCar.TabIndex = 13;
+            this.pcbMiniCar.TabStop = false;
+            // 
+            // pcbMiniFinishLine
+            // 
+            this.pcbMiniFinishLine.BackgroundImage = global::RoadFighter.Properties.Resources.finish;
+            this.pcbMiniFinishLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbMiniFinishLine.Location = new System.Drawing.Point(0, 40);
+            this.pcbMiniFinishLine.Name = "pcbMiniFinishLine";
+            this.pcbMiniFinishLine.Size = new System.Drawing.Size(60, 10);
+            this.pcbMiniFinishLine.TabIndex = 23;
+            this.pcbMiniFinishLine.TabStop = false;
+            // 
+            // lblDistance
+            // 
+            this.lblDistance.AutoSize = true;
+            this.lblDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDistance.Location = new System.Drawing.Point(283, 9);
+            this.lblDistance.Name = "lblDistance";
+            this.lblDistance.Size = new System.Drawing.Size(88, 24);
+            this.lblDistance.TabIndex = 24;
+            this.lblDistance.Text = "distance";
             // 
             // frmGame
             // 
@@ -418,6 +457,9 @@
             this.pnlLeftLines.ResumeLayout(false);
             this.pnlRightLines.ResumeLayout(false);
             this.pnlUnderGrass.ResumeLayout(false);
+            this.pnlTest.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiniCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMiniFinishLine)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,6 +494,9 @@
         private System.Windows.Forms.Panel pnlUnderGrass;
         public System.Windows.Forms.Timer tmrFinishGame;
         private System.Windows.Forms.Panel pnlTest;
+        public System.Windows.Forms.PictureBox pcbMiniCar;
+        public System.Windows.Forms.PictureBox pcbMiniFinishLine;
+        public System.Windows.Forms.Label lblDistance;
     }
 }
 

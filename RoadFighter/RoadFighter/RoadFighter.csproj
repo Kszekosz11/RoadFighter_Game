@@ -103,11 +103,11 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\menuBackground.png" />
     <None Include="Resources\car.png" />
     <None Include="Resources\enemyCar.png" />
     <None Include="Resources\carResized.png" />
     <None Include="Resources\menuBackground2.png" />
-    <None Include="Resources\menuBackground.png" />
     <None Include="Resources\menuGrass.png" />
     <None Include="Resources\menuCar.png" />
     <None Include="Resources\tree4.png" />

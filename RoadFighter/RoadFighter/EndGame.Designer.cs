@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEndGame));
+            this.lblDescription = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.lblDescriptionGame = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblDescription
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CONGRATULATION";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescription.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(17, 18);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(255, 30);
+            this.lblDescription.TabIndex = 5;
+            this.lblDescription.Text = "CONGRATULATION";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPlayAgain
             // 
@@ -58,7 +59,7 @@
             this.btnPlayAgain.Location = new System.Drawing.Point(97, 136);
             this.btnPlayAgain.Name = "btnPlayAgain";
             this.btnPlayAgain.Size = new System.Drawing.Size(90, 35);
-            this.btnPlayAgain.TabIndex = 1;
+            this.btnPlayAgain.TabIndex = 0;
             this.btnPlayAgain.Text = "Play Again";
             this.btnPlayAgain.UseVisualStyleBackColor = false;
             this.btnPlayAgain.Click += new System.EventHandler(this.btnPlayAgain_Click);
@@ -75,7 +76,7 @@
             this.btnMenu.Location = new System.Drawing.Point(97, 177);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(90, 35);
-            this.btnMenu.TabIndex = 2;
+            this.btnMenu.TabIndex = 1;
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -92,35 +93,23 @@
             this.btnQuit.Location = new System.Drawing.Point(97, 218);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(90, 35);
-            this.btnQuit.TabIndex = 3;
+            this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // lblDescriptionGame
-            // 
-            this.lblDescriptionGame.AutoSize = true;
-            this.lblDescriptionGame.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescriptionGame.Font = new System.Drawing.Font("Mistral", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDescriptionGame.Location = new System.Drawing.Point(81, 65);
-            this.lblDescriptionGame.Name = "lblDescriptionGame";
-            this.lblDescriptionGame.Size = new System.Drawing.Size(121, 68);
-            this.lblDescriptionGame.TabIndex = 4;
-            this.lblDescriptionGame.Text = "YOU WON\r\nTHE GAME";
             // 
             // frmEndGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::RoadFighter.Properties.Resources.menuBackground;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.lblDescriptionGame);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnPlayAgain);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -134,10 +123,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Label lblDescriptionGame;
     }
 }
