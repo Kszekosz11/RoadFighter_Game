@@ -9,7 +9,10 @@ using System.Windows.Forms;
 namespace RoadFighter
 {
     public class GameEngine
-    {   
+    {
+        public frmGame Game { get; set; }
+        public frmMenuForm MenuUI { get; set; }
+
         public PictureBox Car { get; set; }
         public PictureBox Coin { get; set; }
         public PictureBox EnemyCar { get; set; }
@@ -34,8 +37,11 @@ namespace RoadFighter
         private double speedMax = 10.0;
         private double speedMin = 1.0;
 
-        public GameEngine(frmGame game)
+        public GameEngine(frmGame game, frmMenuForm menuUI)
         {
+            Game = game;
+            MenuUI = menuUI;
+
             Car = game.pcbCar;            
             EnemyCar = game.pcbEnemyCar;            
             Coin = game.pcbCoin;
@@ -90,19 +96,22 @@ namespace RoadFighter
         {
             if (Ticks > 10)
             {
-                FinishLine.Visible = true;
+                FinishLine.Visible = true;                
                 if (Car.Bounds.IntersectsWith(FinishLine.Bounds))
                 {
                     SceneTimer.Stop();
                     GameTimer.Stop();
                     FinishGame.Enabled = true;
+
+                    frmEndGame endGame = new frmEndGame(Game, MenuUI);
+                    endGame.Show();
                 }
             }
         }
 
         public void finishGame(double speed)
         {            
-            Car.Top -= (int)speed;
+            Car.Top -= (int)speed * 2;
         }
 
         public void enemyCarControl(double speed)
@@ -153,7 +162,7 @@ namespace RoadFighter
                 Car.Image = Properties.Resources.explosion;
                 SceneTimer.Enabled = false;
             }
-            
+
             //
             //  OPRACOWAĆ KONIEC GRY
             //  OKNO ZAMYKAJĄCE GRE, RESTARTUJĄCE LUB WRACAJĄCE GO MENU GŁOWNEGO
@@ -181,6 +190,10 @@ namespace RoadFighter
                         if (speed <= speedMax)
                         {
                             speed += 0.5;
+                            if (FinishLine.Visible == true)
+                            {
+                                Car.Top -= 10;
+                            }                            
                         }
                         Car.Top -= 5;
                     }
@@ -191,7 +204,7 @@ namespace RoadFighter
                         if (speed >= speedMin)
                         {
                             speed -= 0.1;
-                            Car.Top += 5;
+                            Car.Top += 5;                            
                         }
                     }
                     break;

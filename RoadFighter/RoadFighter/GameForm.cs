@@ -12,8 +12,9 @@ namespace RoadFighter
 {
     public partial class frmGame : Form
     {
-        public Form MenuUI { get; }
+        public frmMenuForm MenuUI { get; }
         public GameEngine Game { get; set; }
+        //public Form NewGame { get; set; }
 
         public frmGame(frmMenuForm menuUI)
         {
@@ -23,8 +24,19 @@ namespace RoadFighter
             tmrGameTimer.Enabled = false;
             tmrFinishGame.Enabled = false;
             MenuUI = menuUI;                        
-            Game = new GameEngine(this);           
+            Game = new GameEngine(this, MenuUI);           
         }
+
+        //public frmGame(frmGame newGame)
+        //{
+        //    InitializeComponent();
+        //    this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        //    tmrSceneTimer.Enabled = false;
+        //    tmrGameTimer.Enabled = false;
+        //    tmrFinishGame.Enabled = false;
+        //    NewGame = newGame;
+        //    Game = new GameEngine(this);
+        //}
 
         private void sceneTimer_Tick(object sender, EventArgs e)
         {
