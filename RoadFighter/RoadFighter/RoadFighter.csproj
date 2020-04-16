@@ -104,6 +104,11 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\river.png" />
+    <None Include="Resources\flat.png" />
+    <None Include="Resources\house2.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\church.png" />
     <None Include="Resources\time.png" />
     <None Include="Resources\menuBackground.png" />
     <None Include="Resources\car.png" />

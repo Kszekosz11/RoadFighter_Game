@@ -14,7 +14,6 @@ D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe.config
 D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.exe
 D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\RoadFighter.pdb
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csprojAssemblyReference.cache
-D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.g.resources
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.Properties.Resources.resources
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.GenerateResource.cache
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.CoreCompileInputs.cache
@@ -32,5 +31,6 @@ E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\Roa
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.pdb
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmMenuUI.resources
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmGame.resources
-D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmMenuUI.resources
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmGame.resources
+D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmMenuForm.resources
+D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmEndGame.resources
