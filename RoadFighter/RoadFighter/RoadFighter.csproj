@@ -53,6 +53,7 @@
       <DependentUpon>EndGame.cs</DependentUpon>
     </Compile>
     <Compile Include="GameEngine.cs" />
+    <Compile Include="LocationY.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +104,7 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\time.png" />
     <None Include="Resources\menuBackground.png" />
     <None Include="Resources\car.png" />
     <None Include="Resources\enemyCar.png" />
