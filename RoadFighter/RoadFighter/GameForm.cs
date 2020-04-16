@@ -12,8 +12,8 @@ namespace RoadFighter
 {
     public partial class frmGame : Form
     {
-        public frmMenuForm MenuUI { get; }
-        public GameEngine Game { get; set; }  
+        public frmMenuForm MenuUI { get; }        
+        public GameEngine Game { get; set; }          
 
         public frmGame(frmMenuForm menuUI)
         {
@@ -32,8 +32,12 @@ namespace RoadFighter
             Game.drawTrees(Game.SpeedGame);
             Game.enemyCarControl(Game.SpeedGame);
             Game.gameOver(MenuUI);
-            Game.coinCollected();
+
             Game.coinControl(Game.SpeedGame);
+            Game.coinCollected();
+
+            Game.clockControl(Game.SpeedGame);
+            Game.clockCollected();
 
             Game.distanceToFinish();
 
