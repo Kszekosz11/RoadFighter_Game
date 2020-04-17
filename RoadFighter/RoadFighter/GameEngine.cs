@@ -20,9 +20,23 @@ namespace RoadFighter
         public PictureBox EnemyCar { get; set; }
         public PictureBox FinishLine { get; set; }
         public PictureBox MiniFinishLine { get; set; }
+
+        //public PictureBox Church { get; set; }
+        //public PictureBox Houses { get; set; }
+        //public PictureBox Flats { get; set; }
+
+        public PictureBox[] SceneElements { get; set; }
+
+
+        public PictureBox Line { get; set; }
         public Panel LeftLines { get; set; }
         public Panel RightLines { get; set; }
+        
+        
+        
         public Panel Grass { get; set; }
+
+
         public Panel Road { get; set; }
         public Label Points { get; set; }
         public Label Time { get; set; }
@@ -41,6 +55,9 @@ namespace RoadFighter
         private double speedMax = 10.0;
         private double speedMin = 0.0;
 
+        int distanceBetweenLines = 50;
+
+
         public GameEngine(frmGame game, frmMenuForm menuUI)
         {
             Game = game;
@@ -54,6 +71,15 @@ namespace RoadFighter
             LeftLines = game.pnlLeftLines;
             RightLines = game.pnlRightLines;
             Grass = game.pnlGrass;
+
+            Line = game.pcbLine1;
+
+            SceneElements = new PictureBox[Grass.Controls.Count];
+
+            SceneElements[0] = game.pcbChurch;
+            SceneElements[1] = game.pcbHouses;
+            SceneElements[2] = game.pcbFlats;
+
             Road = game.pnlRoad;
             Points = game.lblPoints;
             Time = game.lblTime;
@@ -79,18 +105,18 @@ namespace RoadFighter
             Clock.Location = randomLocation((int)LocationY.clock);
         }
 
-        public void drawTrees(double speed)
+        public void drawScene(double speed)
         {
-            if (Grass.Top >= Game.Height * 2)
+            for (int i = 0; i < SceneElements.Length; i++)
             {
-                Grass.Top = -(Game.Height * 2);
+                if (SceneElements[i].Top >= Game.Height) SceneElements[i].Top = -SceneElements[0].Height;                
+                    else SceneElements[i].Top += (int)speed;
             }
-            else Grass.Top += (int)speed;
         }
 
         public void drawLines(double speed)
         {
-            if ((LeftLines.Top >= 138) && (RightLines.Top >= 138))
+            if (LeftLines.Top >= Line.Height + distanceBetweenLines)
             {
                 LeftLines.Top = 0;
                 RightLines.Top = 0;
@@ -151,7 +177,7 @@ namespace RoadFighter
             }
         }
 
-        public void finishGame(double speed)
+        public void IfYouWin(double speed)
         {
             Car.Top -= (int)speed * 2;
         }
@@ -232,12 +258,21 @@ namespace RoadFighter
         {
             if (Car.Bounds.IntersectsWith(EnemyCar.Bounds))
             {
-                //Car.Image = Properties.Resources.explosion;
+                //Car.Visible = false;
+                //Car.Image = Properties.Resources.boom;
+
+                //PictureBox explosion = new PictureBox();
+                //explosion.Location = Car.Location;
+                //explosion.Enabled = true;
+                //explosion.Visible = true;
+                //explosion.BackgroundImage = Properties.Resources.boom;
+
                 SceneTimer.Enabled = false;
                 GameTimer.Enabled = false;
 
                 SpeedGame = 0;
                 EnemyCar.Location = randomLocation(-250);
+                //Car.Visible = true;
                 Car.Location = new Point(165, 543);
 
                 Ticks -= 5;

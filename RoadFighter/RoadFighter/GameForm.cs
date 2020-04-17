@@ -29,7 +29,7 @@ namespace RoadFighter
         private void sceneTimer_Tick(object sender, EventArgs e)
         {
             Game.drawLines(Game.SpeedGame);
-            Game.drawTrees(Game.SpeedGame);
+            Game.drawScene(Game.SpeedGame);
             Game.enemyCarControl(Game.SpeedGame);
             Game.gameOver(MenuUI);
 
@@ -41,8 +41,7 @@ namespace RoadFighter
 
             Game.distanceToFinish();
 
-            Game.showFinishLine();
-            
+            Game.showFinishLine();            
         }
 
         private void keysHandling(object sender, KeyEventArgs e)
@@ -59,12 +58,12 @@ namespace RoadFighter
 
         private void tmrFinishGame_Tick(object sender, EventArgs e)
         {
-            Game.finishGame(Game.SpeedGame);
+            Game.IfYouWin(Game.SpeedGame);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             MenuUI.Show();
-        }   
+        }
     }
 }

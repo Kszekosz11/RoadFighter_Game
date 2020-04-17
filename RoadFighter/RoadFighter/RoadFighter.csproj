@@ -79,18 +79,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -104,27 +104,36 @@
     <Content Include="car.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\river.png" />
-    <None Include="Resources\flat.png" />
-    <None Include="Resources\house2.png" />
-    <None Include="Resources\house.png" />
-    <None Include="Resources\church.png" />
+    <None Include="Resources\boom.gif" />
+    <None Include="Resources\houses2.png" />
+    <None Include="Resources\market.png" />
+    <None Include="Resources\houses.png" />
+    <None Include="Resources\flats.png" />
+    <None Include="Resources\churchFlat.png" />
+    <None Include="Resources\scenerio.png" />
     <None Include="Resources\time.png" />
-    <None Include="Resources\menuBackground.png" />
-    <None Include="Resources\car.png" />
-    <None Include="Resources\enemyCar.png" />
-    <None Include="Resources\carResized.png" />
-    <None Include="Resources\menuBackground2.png" />
-    <None Include="Resources\menuGrass.png" />
     <None Include="Resources\menuCar.png" />
+    <None Include="Resources\menuBackground2.png" />
+    <None Include="Resources\menuBackground.png" />
+    <None Include="Resources\leftSceneCorrected.png" />
+    <None Include="Resources\leftScene.png" />
+    <None Include="Resources\house2.png" />
+    <None Include="Resources\flat.png" />
+    <None Include="Resources\finish.png" />
+    <None Include="Resources\explosion.png" />
+    <None Include="Resources\enemyCar.png" />
+    <None Include="Resources\coin.png" />
+    <None Include="Resources\church.png" />
+    <None Include="Resources\carResized.png" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\river.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\menuGrass.png" />
     <None Include="Resources\tree4.png" />
     <None Include="Resources\tree3.png" />
     <None Include="Resources\tree2.png" />
     <None Include="Resources\tree1.png" />
     <None Include="Resources\grassTexture.png" />
-    <None Include="Resources\coin.png" />
-    <None Include="Resources\finish.png" />
-    <None Include="Resources\explosion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
