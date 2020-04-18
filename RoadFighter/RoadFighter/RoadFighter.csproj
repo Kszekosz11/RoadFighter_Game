@@ -54,6 +54,7 @@
     <Compile Include="EndGame.Designer.cs">
       <DependentUpon>EndGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="enemyStep.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="LocationY.cs" />
     <Compile Include="MenuForm.cs">

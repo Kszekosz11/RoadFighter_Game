@@ -50,6 +50,7 @@ namespace RoadFighter
         private int DistanceOfPanel { get; set; }
         public int SpeedGame { get; set; }
         public double RouteDistance { get; set; }
+        //private int Movement { get; set; }
 
         Random random = new Random();
 
@@ -60,6 +61,7 @@ namespace RoadFighter
 
         int distanceBetweenLines = 50;
 
+        int movement;
 
         public GameEngine(frmGame game, frmMenuForm menuUI)
         {
@@ -109,6 +111,8 @@ namespace RoadFighter
 
             regionElements(Coin);
             regionElements(Clock);
+
+            movement = random.Next(-1, 2);
         }
 
         private void regionElements(Control element)
@@ -202,9 +206,15 @@ namespace RoadFighter
             {
                 if (EnemyCar.Top > Road.Height)
                 {
-                    EnemyCar.Location = randomLocation(-250);
+                    EnemyCar.Location = randomLocation((int)LocationY.enemyCar);
+                    movement = random.Next(-1, 2);
                 }
-                else EnemyCar.Top += 5;
+                else
+                {
+                    EnemyCar.Top += 5;
+                    if (EnemyCar.Left > DistanceOfPanel && EnemyCar.Right + DistanceOfPanel < Road.Width)                    
+                        EnemyCar.Left -= movement;
+                }
             }
             else
             {
