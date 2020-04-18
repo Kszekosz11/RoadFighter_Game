@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,9 @@ namespace RoadFighter
         public PictureBox Line { get; set; }
         public Panel LeftLines { get; set; }
         public Panel RightLines { get; set; }
-        
-        
-        
+
+
+
         public Panel Grass { get; set; }
 
 
@@ -105,14 +106,25 @@ namespace RoadFighter
             Coin.Location = randomLocation((int)LocationY.coin);
             EnemyCar.Location = randomLocation((int)LocationY.enemyCar);
             Clock.Location = randomLocation((int)LocationY.clock);
+
+            regionElements(Coin);
+            regionElements(Clock);
+        }
+
+        private void regionElements(Control element)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(0, 0, element.Width, element.Height);
+            Region rg = new Region(gp);
+            element.Region = rg;
         }
 
         public void drawScene(int speed)
         {
             for (int i = 0; i < SceneElements.Length; i++)
             {
-                if (SceneElements[i].Top >= Game.Height) SceneElements[i].Top = -SceneElements[0].Height;                
-                    else SceneElements[i].Top += (int)speed;
+                if (SceneElements[i].Top >= Game.Height) SceneElements[i].Top = -SceneElements[0].Height;
+                else SceneElements[i].Top += (int)speed;
             }
         }
 
@@ -156,9 +168,8 @@ namespace RoadFighter
             {
                 RouteDistance -= ((double)SpeedGame / 500);
                 Distance.Text = string.Format("{0:F2}{1}", RouteDistance, " km");
-                //Distance.Text = ((int)RouteDistance).ToString() + " km";
             }
-            else Distance.Text = "0";
+            else Distance.Text = "0 km";
         }
 
         public void showFinishLine()
@@ -196,7 +207,6 @@ namespace RoadFighter
                 else EnemyCar.Top += 5;
             }
             else
-
             {
                 EnemyCar.Enabled = false;
                 EnemyCar.Location = randomLocation(Game.Height + EnemyCar.Height);
@@ -217,6 +227,8 @@ namespace RoadFighter
                 }
             }
             else Coin.Top += 5;
+
+
         }
 
         public void coinCollected()
@@ -238,7 +250,7 @@ namespace RoadFighter
                 Clock.Enabled = true;
                 Clock.Location = randomLocation((int)LocationY.clock);
 
-                if (Clock.Bounds.IntersectsWith(EnemyCar.Bounds))
+                if ((Clock.Location.Y == EnemyCar.Height) || (Clock.Location.X == EnemyCar.Width) || (Clock.Bounds.IntersectsWith(EnemyCar.Bounds)))
                 {
                     Clock.Location = randomLocation((int)LocationY.clock);
                 }
@@ -256,7 +268,7 @@ namespace RoadFighter
                 Clock.Location = randomLocation((int)LocationY.clock);
             }
         }
-        
+
         public void gameOver(Form menuUI)
         {
             if (Car.Bounds.IntersectsWith(EnemyCar.Bounds))
@@ -303,6 +315,30 @@ namespace RoadFighter
 
         public void carControl(KeyEventArgs e)
         {
+            //    if ((Keyboard.IsKeyDown(Key.Left)) && (Keyboard.IsKeyDown(Key.Up)))
+            //    {
+            //        if (Car.Left > DistanceOfPanel) Car.Left -= step;
+
+            //        if (SceneTimer.Enabled == false)
+            //        {
+            //            GameTimer.Enabled = true;
+            //            SceneTimer.Enabled = true;
+            //        }
+            //        else if (Car.Top > FinishLine.Top)
+            //        {
+            //            if (SpeedGame <= speedMax)
+            //            {
+            //                SpeedGame += 1;
+            //                if (FinishLine.Visible == true)
+            //                {
+            //                    Car.Top -= step;
+            //                }
+            //            }
+            //            Car.Top -= 5;
+            //        }
+            //    }
+            //}
+
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -315,7 +351,7 @@ namespace RoadFighter
                     if (SceneTimer.Enabled == false)
                     {
                         GameTimer.Enabled = true;
-                        SceneTimer.Enabled = true;                        
+                        SceneTimer.Enabled = true;
                     }
                     else if (Car.Top > FinishLine.Top)
                     {
@@ -349,7 +385,7 @@ namespace RoadFighter
                     else
                     {
                         SceneTimer.Start();
-                        GameTimer.Start();                        
+                        GameTimer.Start();
                     }
                     break;
                 default:

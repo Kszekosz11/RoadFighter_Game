@@ -137,7 +137,7 @@
             this.pnlRoad.Controls.Add(this.pnlLeftLines);
             this.pnlRoad.Controls.Add(this.pnlRightLines);
             this.pnlRoad.Location = new System.Drawing.Point(280, 0);
-            this.pnlRoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRoad.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoad.Name = "pnlRoad";
             this.pnlRoad.Size = new System.Drawing.Size(533, 788);
             this.pnlRoad.TabIndex = 24;
@@ -148,7 +148,7 @@
             this.pcbClock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbClock.BackgroundImage")));
             this.pcbClock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbClock.Location = new System.Drawing.Point(264, 304);
-            this.pcbClock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbClock.Margin = new System.Windows.Forms.Padding(4);
             this.pcbClock.Name = "pcbClock";
             this.pcbClock.Size = new System.Drawing.Size(40, 37);
             this.pcbClock.TabIndex = 25;
@@ -160,7 +160,7 @@
             this.pcbCoin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbCoin.BackgroundImage")));
             this.pcbCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbCoin.Location = new System.Drawing.Point(195, 304);
-            this.pcbCoin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbCoin.Margin = new System.Windows.Forms.Padding(4);
             this.pcbCoin.Name = "pcbCoin";
             this.pcbCoin.Size = new System.Drawing.Size(40, 37);
             this.pcbCoin.TabIndex = 15;
@@ -172,7 +172,7 @@
             this.pcbCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbCar.BackgroundImage")));
             this.pcbCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbCar.Location = new System.Drawing.Point(220, 668);
-            this.pcbCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbCar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbCar.Name = "pcbCar";
             this.pcbCar.Size = new System.Drawing.Size(67, 105);
             this.pcbCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,7 +184,7 @@
             this.pcbEnemyCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemyCar.BackgroundImage")));
             this.pcbEnemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbEnemyCar.Location = new System.Drawing.Point(220, 162);
-            this.pcbEnemyCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbEnemyCar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbEnemyCar.Name = "pcbEnemyCar";
             this.pcbEnemyCar.Size = new System.Drawing.Size(67, 105);
             this.pcbEnemyCar.TabIndex = 13;
@@ -208,7 +208,7 @@
             this.pcbFinishLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbFinishLine.Enabled = false;
             this.pcbFinishLine.Location = new System.Drawing.Point(-1, 44);
-            this.pcbFinishLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbFinishLine.Margin = new System.Windows.Forms.Padding(4);
             this.pcbFinishLine.Name = "pcbFinishLine";
             this.pcbFinishLine.Size = new System.Drawing.Size(535, 62);
             this.pcbFinishLine.TabIndex = 22;
@@ -223,7 +223,7 @@
             this.pnlLeftLines.Controls.Add(this.pcbLine4);
             this.pnlLeftLines.Controls.Add(this.pcbLine5);
             this.pnlLeftLines.Location = new System.Drawing.Point(137, 0);
-            this.pnlLeftLines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlLeftLines.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLeftLines.Name = "pnlLeftLines";
             this.pnlLeftLines.Size = new System.Drawing.Size(24, 788);
             this.pnlLeftLines.TabIndex = 23;
@@ -232,7 +232,7 @@
             // 
             this.pcbLine1.BackColor = System.Drawing.Color.White;
             this.pcbLine1.Location = new System.Drawing.Point(0, 0);
-            this.pcbLine1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbLine1.Margin = new System.Windows.Forms.Padding(4);
             this.pcbLine1.Name = "pcbLine1";
             this.pcbLine1.Size = new System.Drawing.Size(24, 98);
             this.pcbLine1.TabIndex = 0;
@@ -243,7 +243,7 @@
             // 
             this.pcbLine2.BackColor = System.Drawing.Color.White;
             this.pcbLine2.Location = new System.Drawing.Point(0, 169);
-            this.pcbLine2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbLine2.Margin = new System.Windows.Forms.Padding(4);
             this.pcbLine2.Name = "pcbLine2";
             this.pcbLine2.Size = new System.Drawing.Size(24, 98);
             this.pcbLine2.TabIndex = 1;
@@ -254,7 +254,7 @@
             // 
             this.pcbLine3.BackColor = System.Drawing.Color.White;
             this.pcbLine3.Location = new System.Drawing.Point(0, 337);
-            this.pcbLine3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbLine3.Margin = new System.Windows.Forms.Padding(4);
             this.pcbLine3.Name = "pcbLine3";
             this.pcbLine3.Size = new System.Drawing.Size(24, 98);
             this.pcbLine3.TabIndex = 2;
@@ -265,7 +265,7 @@
             // 
             this.pcbLine4.BackColor = System.Drawing.Color.White;
             this.pcbLine4.Location = new System.Drawing.Point(0, 506);
-            this.pcbLine4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbLine4.Margin = new System.Windows.Forms.Padding(4);
             this.pcbLine4.Name = "pcbLine4";
             this.pcbLine4.Size = new System.Drawing.Size(24, 98);
             this.pcbLine4.TabIndex = 3;
@@ -276,7 +276,7 @@
             // 
             this.pcbLine5.BackColor = System.Drawing.Color.White;
             this.pcbLine5.Location = new System.Drawing.Point(0, 674);
-            this.pcbLine5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbLine5.Margin = new System.Windows.Forms.Padding(4);
             this.pcbLine5.Name = "pcbLine5";
             this.pcbLine5.Size = new System.Drawing.Size(24, 98);
             this.pcbLine5.TabIndex = 4;
@@ -291,7 +291,7 @@
             this.pnlRightLines.Controls.Add(this.lblLine9);
             this.pnlRightLines.Controls.Add(this.lblLine8);
             this.pnlRightLines.Location = new System.Drawing.Point(345, 0);
-            this.pnlRightLines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRightLines.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRightLines.Name = "pnlRightLines";
             this.pnlRightLines.Size = new System.Drawing.Size(24, 788);
             this.pnlRightLines.TabIndex = 5;
@@ -300,7 +300,7 @@
             // 
             this.lblLine6.BackColor = System.Drawing.Color.White;
             this.lblLine6.Location = new System.Drawing.Point(0, 0);
-            this.lblLine6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLine6.Margin = new System.Windows.Forms.Padding(4);
             this.lblLine6.Name = "lblLine6";
             this.lblLine6.Size = new System.Drawing.Size(24, 98);
             this.lblLine6.TabIndex = 11;
@@ -311,7 +311,7 @@
             // 
             this.lblLine10.BackColor = System.Drawing.Color.White;
             this.lblLine10.Location = new System.Drawing.Point(0, 679);
-            this.lblLine10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLine10.Margin = new System.Windows.Forms.Padding(4);
             this.lblLine10.Name = "lblLine10";
             this.lblLine10.Size = new System.Drawing.Size(24, 98);
             this.lblLine10.TabIndex = 7;
@@ -322,7 +322,7 @@
             // 
             this.lblLine7.BackColor = System.Drawing.Color.White;
             this.lblLine7.Location = new System.Drawing.Point(0, 170);
-            this.lblLine7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLine7.Margin = new System.Windows.Forms.Padding(4);
             this.lblLine7.Name = "lblLine7";
             this.lblLine7.Size = new System.Drawing.Size(24, 98);
             this.lblLine7.TabIndex = 10;
@@ -333,7 +333,7 @@
             // 
             this.lblLine9.BackColor = System.Drawing.Color.White;
             this.lblLine9.Location = new System.Drawing.Point(0, 510);
-            this.lblLine9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLine9.Margin = new System.Windows.Forms.Padding(4);
             this.lblLine9.Name = "lblLine9";
             this.lblLine9.Size = new System.Drawing.Size(24, 98);
             this.lblLine9.TabIndex = 8;
@@ -344,7 +344,7 @@
             // 
             this.lblLine8.BackColor = System.Drawing.Color.White;
             this.lblLine8.Location = new System.Drawing.Point(0, 340);
-            this.lblLine8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLine8.Margin = new System.Windows.Forms.Padding(4);
             this.lblLine8.Name = "lblLine8";
             this.lblLine8.Size = new System.Drawing.Size(24, 98);
             this.lblLine8.TabIndex = 9;
@@ -356,7 +356,7 @@
             this.pnlUnderGrass.BackColor = System.Drawing.Color.DarkGreen;
             this.pnlUnderGrass.Controls.Add(this.pnlGrass);
             this.pnlUnderGrass.Location = new System.Drawing.Point(80, 0);
-            this.pnlUnderGrass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlUnderGrass.Margin = new System.Windows.Forms.Padding(4);
             this.pnlUnderGrass.Name = "pnlUnderGrass";
             this.pnlUnderGrass.Size = new System.Drawing.Size(200, 788);
             this.pnlUnderGrass.TabIndex = 24;
@@ -369,7 +369,7 @@
             this.pnlGrass.Controls.Add(this.pcbHouses);
             this.pnlGrass.Controls.Add(this.pcbChurch);
             this.pnlGrass.Location = new System.Drawing.Point(0, 0);
-            this.pnlGrass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGrass.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGrass.Name = "pnlGrass";
             this.pnlGrass.Size = new System.Drawing.Size(200, 788);
             this.pnlGrass.TabIndex = 20;
@@ -380,7 +380,7 @@
             this.pcbFlats.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbFlats.BackgroundImage")));
             this.pcbFlats.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbFlats.Location = new System.Drawing.Point(0, 279);
-            this.pcbFlats.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbFlats.Margin = new System.Windows.Forms.Padding(4);
             this.pcbFlats.Name = "pcbFlats";
             this.pcbFlats.Size = new System.Drawing.Size(200, 202);
             this.pcbFlats.TabIndex = 3;
@@ -392,7 +392,7 @@
             this.pcbHouses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbHouses.BackgroundImage")));
             this.pcbHouses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbHouses.Location = new System.Drawing.Point(35, 92);
-            this.pcbHouses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbHouses.Margin = new System.Windows.Forms.Padding(4);
             this.pcbHouses.Name = "pcbHouses";
             this.pcbHouses.Size = new System.Drawing.Size(135, 119);
             this.pcbHouses.TabIndex = 1;
@@ -404,7 +404,7 @@
             this.pcbChurch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbChurch.BackgroundImage")));
             this.pcbChurch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbChurch.Location = new System.Drawing.Point(0, 562);
-            this.pcbChurch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbChurch.Margin = new System.Windows.Forms.Padding(4);
             this.pcbChurch.Name = "pcbChurch";
             this.pcbChurch.Size = new System.Drawing.Size(200, 164);
             this.pcbChurch.TabIndex = 0;
@@ -419,7 +419,7 @@
             this.pnlTest.Controls.Add(this.pcbMiniCar);
             this.pnlTest.Controls.Add(this.pcbMiniFinishLine);
             this.pnlTest.Location = new System.Drawing.Point(0, 0);
-            this.pnlTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTest.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTest.Name = "pnlTest";
             this.pnlTest.Size = new System.Drawing.Size(80, 788);
             this.pnlTest.TabIndex = 25;
@@ -430,7 +430,7 @@
             this.pcbMiniCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbMiniCar.BackgroundImage")));
             this.pcbMiniCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbMiniCar.Location = new System.Drawing.Point(23, 660);
-            this.pcbMiniCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbMiniCar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbMiniCar.Name = "pcbMiniCar";
             this.pcbMiniCar.Size = new System.Drawing.Size(35, 62);
             this.pcbMiniCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -443,7 +443,7 @@
             this.pcbMiniFinishLine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbMiniFinishLine.BackgroundImage")));
             this.pcbMiniFinishLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcbMiniFinishLine.Location = new System.Drawing.Point(0, 50);
-            this.pcbMiniFinishLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbMiniFinishLine.Margin = new System.Windows.Forms.Padding(4);
             this.pcbMiniFinishLine.Name = "pcbMiniFinishLine";
             this.pcbMiniFinishLine.Size = new System.Drawing.Size(80, 10);
             this.pcbMiniFinishLine.TabIndex = 23;
@@ -458,7 +458,7 @@
             this.Controls.Add(this.pnlTest);
             this.Controls.Add(this.pnlRoad);
             this.Controls.Add(this.pnlUnderGrass);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoadFighter";
