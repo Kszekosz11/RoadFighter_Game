@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RoadFighter
 {
-    public partial class frmMenuForm : Form
+    public partial class FrmMenu : Form
     {
-        public frmMenuForm()
+        public FrmMenu()
         {
             InitializeComponent();            
             this.FormBorderStyle = FormBorderStyle.FixedSingle;            
@@ -21,7 +21,7 @@ namespace RoadFighter
 
         private void btnStartGame_click(object sender, EventArgs e)
         {
-            frmGame startGame = new frmGame(this);
+            FrmGame startGame = new FrmGame(this);
             this.Hide();
             startGame.Show();            
         }

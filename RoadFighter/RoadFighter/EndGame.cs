@@ -12,10 +12,10 @@ namespace RoadFighter
 {
     public partial class frmEndGame : Form
     {
-        public frmMenuForm MenuUI { get; }
-        public frmGame ActualGame { get; }        
+        public FrmMenu MenuUI { get; }
+        public FrmGame ActualGame { get; }        
 
-        public frmEndGame(frmGame game, frmMenuForm menuUI, string description)
+        public frmEndGame(FrmGame game, FrmMenu menuUI, string description)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -28,7 +28,7 @@ namespace RoadFighter
         {
             this.Close();
             ActualGame.Close();
-            frmGame newGame = new frmGame(MenuUI);
+            FrmGame newGame = new FrmGame(MenuUI);
             newGame.Show();
         }
 

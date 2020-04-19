@@ -1,6 +1,6 @@
 ﻿namespace RoadFighter
 {
-    partial class frmGame
+    partial class FrmGame
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGame));
             this.tmrSceneTimer = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
@@ -92,9 +92,8 @@
             // 
             // tmrSceneTimer
             // 
-            this.tmrSceneTimer.Enabled = true;
             this.tmrSceneTimer.Interval = 10;
-            this.tmrSceneTimer.Tick += new System.EventHandler(this.sceneTimer_Tick);
+            this.tmrSceneTimer.Tick += new System.EventHandler(this.SceneTimer_Tick);
             // 
             // lblTime
             // 
@@ -120,9 +119,8 @@
             // 
             // tmrGameTimer
             // 
-            this.tmrGameTimer.Enabled = true;
             this.tmrGameTimer.Interval = 1000;
-            this.tmrGameTimer.Tick += new System.EventHandler(this.tmrGameTimer_Tick);
+            this.tmrGameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // pnlRoad
             // 
@@ -412,7 +410,7 @@
             // 
             // tmrFinishGame
             // 
-            this.tmrFinishGame.Tick += new System.EventHandler(this.tmrFinishGame_Tick);
+            this.tmrFinishGame.Tick += new System.EventHandler(this.FinishGame_Tick);
             // 
             // pnlTest
             // 
@@ -449,7 +447,7 @@
             this.pcbMiniFinishLine.TabIndex = 23;
             this.pcbMiniFinishLine.TabStop = false;
             // 
-            // frmGame
+            // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -459,10 +457,10 @@
             this.Controls.Add(this.pnlRoad);
             this.Controls.Add(this.pnlUnderGrass);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmGame";
+            this.Name = "FrmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoadFighter";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keysHandling);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeysHandling);
             this.pnlRoad.ResumeLayout(false);
             this.pnlRoad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbClock)).EndInit();

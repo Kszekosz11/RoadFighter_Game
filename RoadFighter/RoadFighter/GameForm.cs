@@ -10,60 +10,48 @@ using System.Windows.Forms;
 
 namespace RoadFighter
 {
-    public partial class frmGame : Form
+    public partial class FrmGame : Form
     {
-        public frmMenuForm MenuUI { get; }        
-        public GameEngine Game { get; set; }          
+        public FrmMenu MenuForm { get; }        
+        public GameEngine GameEngine { get; set; }          
 
-        public frmGame(frmMenuForm menuUI)
+        public FrmGame(FrmMenu formMenu)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            tmrSceneTimer.Enabled = false;
-            tmrGameTimer.Enabled = false;
-            tmrFinishGame.Enabled = false;
-            MenuUI = menuUI;                        
-            Game = new GameEngine(this, MenuUI);           
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;            
+            MenuForm = formMenu;                        
+            GameEngine = new GameEngine(this, MenuForm);           
         }
 
-        private void sceneTimer_Tick(object sender, EventArgs e)
+        private void SceneTimer_Tick(object sender, EventArgs e)
         {
-            Game.drawLines(Game.SpeedGame);
-            Game.drawScene(Game.SpeedGame);
-            Game.enemyCarControl(Game.SpeedGame);
-            Game.gameOver(MenuUI);
-
-            Game.coinControl(Game.SpeedGame);
-            Game.coinCollected();
-
-            Game.clockControl(Game.SpeedGame);
-            Game.clockCollected();
-
-            Game.distanceToFinish();
-
-            Game.showFinishLine();            
+            GameEngine.Road.DrawRoad(GameEngine.SpeedGame);
+            GameEngine.Grass.DrawScene(GameEngine.SpeedGame);
+            GameEngine.Road.EnemyCarBox.EnemyCarControl();            
+            GameEngine.Road.CoinBox.CoinControl();
+            GameEngine.Road.CoinBox.CoinCollected();
+            GameEngine.Road.Clock.ClockControl();
+            GameEngine.Road.Clock.ClockCollected();
+            GameEngine.DistanceToFinish();
+            GameEngine.ShowFinishLine();
+            GameEngine.GameOver();
         }
-
-        private void keysHandling(object sender, KeyEventArgs e)
+        private void GameTimer_Tick(object sender, EventArgs e)
         {
-            Game.carControl(e);
+            GameEngine.GameTime();
+            GameEngine.Road.MiniCarBox.RouteDistanceMiniCar();
         }
-
-        private void tmrGameTimer_Tick(object sender, EventArgs e)
+        private void FinishGame_Tick(object sender, EventArgs e)
         {
-            Game.gameTime();
-            
-            Game.routeDistanceMiniCar(Game.SpeedGame);
+            GameEngine.IfYouWin(GameEngine.SpeedGame);
         }
-
-        private void tmrFinishGame_Tick(object sender, EventArgs e)
+        private void KeysHandling(object sender, KeyEventArgs e)
         {
-            Game.IfYouWin(Game.SpeedGame);
+            GameEngine.Road.CarBox.CarControl(e);
         }
-
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            MenuUI.Show();
+            MenuForm.Show();
         }
     }
 }
