@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoadFighter.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,17 +17,17 @@ namespace RoadFighter
         public FrmMenu()
         {
             InitializeComponent();            
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;            
+            FormSettings.SetSetting(this);
         }
 
-        private void btnStartGame_click(object sender, EventArgs e)
+        private void BtnStartGame_Click(object sender, EventArgs e)
         {
             FrmGame startGame = new FrmGame(this);
             this.Hide();
             startGame.Show();            
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
+        private void BtnQuitGame_Click(object sender, EventArgs e)
         {
             this.Close();
         }

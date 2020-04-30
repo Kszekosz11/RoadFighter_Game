@@ -13,14 +13,14 @@ namespace RoadFighter
     public partial class FrmGame : Form
     {
         public FrmMenu MenuForm { get; }        
-        public GameEngine GameEngine { get; set; }          
+        public GameEngine GameEngine { get; set; }
 
         public FrmGame(FrmMenu formMenu)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;            
-            MenuForm = formMenu;                        
-            GameEngine = new GameEngine(this, MenuForm);           
+            FormSettings.SetSetting(this);
+            MenuForm = formMenu;            
+            GameEngine = new GameEngine(this, MenuForm);        
         }
 
         private void SceneTimer_Tick(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace RoadFighter
         }
         private void FinishGame_Tick(object sender, EventArgs e)
         {
-            GameEngine.IfYouWin(GameEngine.SpeedGame);
+            GameEngine.IfYouWin();
         }
         private void KeysHandling(object sender, KeyEventArgs e)
         {

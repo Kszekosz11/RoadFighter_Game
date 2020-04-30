@@ -1,6 +1,6 @@
 ﻿namespace RoadFighter
 {
-    partial class frmEndGame
+    partial class FrmEndGame
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEndGame));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEndGame));
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.btnPlayAgain.TabIndex = 0;
             this.btnPlayAgain.Text = "Play Again";
             this.btnPlayAgain.UseVisualStyleBackColor = false;
-            this.btnPlayAgain.Click += new System.EventHandler(this.btnPlayAgain_Click);
+            this.btnPlayAgain.Click += new System.EventHandler(this.BtnPlayAgain_Click);
             // 
             // btnMenu
             // 
@@ -79,7 +79,7 @@
             this.btnMenu.TabIndex = 1;
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // btnQuit
             // 
@@ -96,7 +96,7 @@
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            this.btnQuit.Click += new System.EventHandler(this.BtnQuit_Click);
             // 
             // frmEndGame
             // 

@@ -17,7 +17,7 @@ namespace RoadFighter
         {
             Game = gameForm;
             Road = road;            
-            Road.EnemyAuto.Location = road.RandomLocation((int)LocationY.enemyCar);
+            Road.EnemyAuto.Location = road.RandomLocation((int)StaticValues.enemyCarPosition);
             movement = road.random.Next(-1, 2);
         }
 
@@ -27,13 +27,13 @@ namespace RoadFighter
             {
                 if (Road.EnemyAuto.Top > Road.Road.Height)
                 {
-                    Road.EnemyAuto.Location = Road.RandomLocation((int)LocationY.enemyCar);
+                    Road.EnemyAuto.Location = Road.RandomLocation((int)StaticValues.enemyCarPosition);
                     movement = Road.random.Next(-1, 2);
                 }
                 else
                 {
                     Road.EnemyAuto.Top += 5;
-                    if (Road.EnemyAuto.Left > Road.distanceOfPanel && Road.EnemyAuto.Right + Road.distanceOfPanel < Road.Road.Width)
+                    if (Road.EnemyAuto.Left > (int)StaticValues.distanceCarOfPanel && Road.EnemyAuto.Right + (int)StaticValues.distanceCarOfPanel < Road.Road.Width)
                         Road.EnemyAuto.Left -= movement;
                 }
             }

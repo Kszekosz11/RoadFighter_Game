@@ -30,10 +30,7 @@ namespace RoadFighter
         public Label Distance { get; set; }
         public int Ticks { get; set; }
         public int PointQuantity { get; set; }
-        public double RouteDistance { get; set; }
-        public int distanceOfPanel = 10;
-        private static readonly int distanceBetweenLines = 50;
-
+        public double RouteDistance { get; set; }     
         public Random random = new Random();
 
         public RoadBox(FrmGame gameFrom, GameEngine gameEngine)
@@ -59,14 +56,14 @@ namespace RoadFighter
 
             CarBox = new CarBox(gameFrom, gameEngine, this);
             EnemyCarBox = new EnemyCarBox(gameFrom, this);
-            CoinBox = new CoinBox(gameEngine, this);
-            Clock = new ClockBox(gameFrom, gameEngine, this);
+            CoinBox = new CoinBox(this);
+            Clock = new ClockBox(gameEngine, this);
             MiniCarBox = new MiniCarBox(gameFrom, this);
         }
 
         public void DrawRoad(int speed)
         {
-            if (LeftLines.Top >= Line.Height + distanceBetweenLines)
+            if (LeftLines.Top >= Line.Height + (int)StaticValues.distanceBetweenLines)
             {
                 LeftLines.Top = 0;
                 RightLines.Top = 0;

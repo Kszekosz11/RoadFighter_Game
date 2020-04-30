@@ -9,14 +9,12 @@ namespace RoadFighter
 {
     public class CoinBox
     {
-        private GameEngine GameEngine { get; set; }
         private RoadBox Road { get; set; }       
 
-        public CoinBox(GameEngine gameEngine, RoadBox road)
-        {
-            GameEngine = gameEngine;
+        public CoinBox(RoadBox road)
+        {            
             Road = road;            
-            road.CoinControl.Location = road.RandomLocation((int)LocationY.coin);
+            road.CoinControl.Location = road.RandomLocation((int)StaticValues.coinPosition);
             road.ChangeToRound(road.CoinControl);
         }
 
@@ -25,11 +23,11 @@ namespace RoadFighter
             if (Road.Auto.Top > Road.Road.Height)
             {
                 Road.CoinControl.Enabled = true;
-                Road.CoinControl.Location = Road.RandomLocation((int)LocationY.coin);
+                Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
 
                 if ((Road.CoinControl.Location.Y == Road.EnemyAuto.Height) || (Road.CoinControl.Location.X == Road.EnemyAuto.Width) || (Road.CoinControl.Bounds.IntersectsWith(Road.EnemyAuto.Bounds)))
                 {
-                    Road.CoinControl.Location = Road.RandomLocation((int)LocationY.coin);
+                    Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
                 }
             }
             else Road.CoinControl.Top += 5;
@@ -42,8 +40,7 @@ namespace RoadFighter
                 Road.PointQuantity++;
                 Road.Points.Text = "Points: " + Road.PointQuantity.ToString();
                 Road.CoinControl.Enabled = false;
-
-                Road.CoinControl.Location = Road.RandomLocation((int)LocationY.coin);
+                Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
             }
         }
     }

@@ -50,7 +50,7 @@ namespace RoadFighter
                 SceneTimer.Enabled = false;
                 GameTimer.Enabled = false;
 
-                frmEndGame endGame = new frmEndGame(FormGame, MenuForm, "TIMEOUT");
+                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "TIMEOUT");
                 FormGame.Enabled = false;
                 endGame.Show();
             }
@@ -71,23 +71,49 @@ namespace RoadFighter
             if (Road.RouteDistance <= 0)
             {
                 Road.FinishLine.Visible = true;
+                SpeedGame = 0;
+                Road.Auto.Top -= ((int)StaticValues.carStep / 2);
             }
 
             if ((Road.Auto.Bounds.IntersectsWith(Road.FinishLine.Bounds)) && (Road.FinishLine.Visible == true))
             {
                 SceneTimer.Stop();
                 GameTimer.Stop();
-                FinishGame.Enabled = true;
+                FinishGame.Start();
+            }
+        }
 
-                frmEndGame endGame = new frmEndGame(FormGame, MenuForm, "YOU WON");
+        public void IfYouWin()
+        {
+            if (Road.Auto.Location.Y > Road.Road.Location.Y - Road.Auto.Height)
+            {
+                Road.Auto.Top -= (int)StaticValues.carStep;
+            }
+            else
+            {
+                FinishGame.Stop();
+                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "WINNER");
                 FormGame.Enabled = false;
                 endGame.Show();
             }
         }
 
-        public void IfYouWin(int speed)
+        public void PauseGame()
         {
-            Road.Auto.Top -= (int)speed * 2;
+            if (SceneTimer.Enabled == true)
+            {
+                SceneTimer.Stop();
+                GameTimer.Stop();
+                FormGame.lblPause.Enabled = true;
+                FormGame.Visible = true;
+            }
+            else
+            {
+                SceneTimer.Start();
+                GameTimer.Start();
+                FormGame.lblPause.Enabled = false;
+                FormGame.lblPause.Visible = false;
+            }
         }
 
         public void GameOver()
@@ -98,7 +124,7 @@ namespace RoadFighter
                 GameTimer.Enabled = false;
 
                 SpeedGame = 0;
-                Road.EnemyAuto.Location = Road.RandomLocation((int)LocationY.enemyCar);                
+                Road.EnemyAuto.Location = Road.RandomLocation((int)StaticValues.enemyCarPosition);                
                 Road.Auto.Location = new Point(165, 543);
 
                 Road.Ticks -= 5;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,9 @@ namespace RoadFighter
         private RoadBox Road { get; set; }
         private PictureBox Car { get; set; }
 
-        private readonly int step = 10;
-
         public CarBox(FrmGame game, GameEngine gameEngine, RoadBox road)
         {
-            Car = game.pcbCar;
+            Car = game.pcbCar;     
             GameEngine = gameEngine;
             Road = road;
         }
@@ -27,51 +26,50 @@ namespace RoadFighter
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    if (Car.Left > Road.distanceOfPanel) Car.Left -= step;
+                    if (GameEngine.SceneTimer.Enabled == true)
+                    {
+                        if (Car.Left > (int)StaticValues.distanceCarOfPanel) Car.Left -= (int)StaticValues.carStep;
+                    }                        
                     break;
                 case Keys.Right:
-                    if (Car.Right < Road.Road.Width - Road.distanceOfPanel) Car.Left += step;
+                    if (GameEngine.SceneTimer.Enabled == true)
+                    {
+                        if (Car.Right < Road.Road.Width - (int)StaticValues.distanceCarOfPanel) Car.Left += (int)StaticValues.carStep;
+                    }                        
                     break;
                 case Keys.Up:
                     if (GameEngine.SceneTimer.Enabled == false)
-                    {
-                        GameEngine.GameTimer.Enabled = true;
-                        GameEngine.SceneTimer.Enabled = true;
+                    {                        
+                        GameEngine.PauseGame();
                     }
                     else if (Car.Top > Road.FinishLine.Top)
-                    {
-                        if (GameEngine.SpeedGame <= GameEngine.SpeedMax)
                         {
-                            GameEngine.SpeedGame += 1;
-                            if (Road.FinishLine.Visible == true)
+                            if (GameEngine.SpeedGame <= GameEngine.SpeedMax)
                             {
-                                Car.Top -= step;
+                                GameEngine.SpeedGame += 1;
+                                if (Road.FinishLine.Visible == true)
+                                {
+                                    Car.Top -= (int)StaticValues.carStep;
+                                }
                             }
-                        }
-                        Car.Top -= 5;
-                    }
+                            Car.Top -= 5;
+                        }                
                     break;
                 case Keys.Down:
-                    if (Car.Top < Road.Road.Height - Car.Height - Road.distanceOfPanel)
-                    {
-                        if (GameEngine.SpeedGame >= GameEngine.SpeedMin)
-                        {
-                            GameEngine.SpeedGame -= 1;
-                            Car.Top += 5;
-                        }
-                    }
-                    break;
-                case Keys.Space:
                     if (GameEngine.SceneTimer.Enabled == true)
                     {
-                        GameEngine.SceneTimer.Stop();
-                        GameEngine.GameTimer.Stop();
-                    }
-                    else
-                    {
-                        GameEngine.SceneTimer.Start();
-                        GameEngine.GameTimer.Start();
-                    }
+                        if (Car.Top < Road.Road.Height - Car.Height - (int)StaticValues.distanceCarOfPanel)
+                        {
+                            if (GameEngine.SpeedGame >= GameEngine.SpeedMin)
+                            {
+                                GameEngine.SpeedGame -= 1;
+                                Car.Top += 5;
+                            }
+                        }
+                    }                        
+                    break;
+                case Keys.Space:
+                    GameEngine.PauseGame();
                     break;
                 default:
                     break;

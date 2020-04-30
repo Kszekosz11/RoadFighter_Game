@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace RoadFighter
 {
-    public partial class frmEndGame : Form
+    public partial class FrmEndGame : Form
     {
         public FrmMenu MenuUI { get; }
         public FrmGame ActualGame { get; }        
 
-        public frmEndGame(FrmGame game, FrmMenu menuUI, string description)
+        public FrmEndGame(FrmGame game, FrmMenu menuUI, string description)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormSettings.SetSetting(this);            
             ActualGame = game;
             MenuUI = menuUI;
             lblDescription.Text = description;
         }
 
-        private void btnPlayAgain_Click(object sender, EventArgs e)
+        private void BtnPlayAgain_Click(object sender, EventArgs e)
         {
             this.Close();
             ActualGame.Close();
@@ -32,13 +32,13 @@ namespace RoadFighter
             newGame.Show();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
             this.Close();
             ActualGame.Close();
         }
 
-        private void btnQuit_Click(object sender, EventArgs e)
+        private void BtnQuit_Click(object sender, EventArgs e)
         {
             this.Close();
             ActualGame.Close();

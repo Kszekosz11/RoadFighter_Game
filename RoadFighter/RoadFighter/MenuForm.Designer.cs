@@ -42,13 +42,15 @@
             // 
             // pnlBackgroundMenu
             // 
+            this.pnlBackgroundMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlBackgroundMenu.BackColor = System.Drawing.Color.Transparent;
             this.pnlBackgroundMenu.BackgroundImage = global::RoadFighter.Properties.Resources.menuBackground2;
             this.pnlBackgroundMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBackgroundMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlBackgroundMenu.Controls.Add(this.pcbMenuCar);
             this.pnlBackgroundMenu.Controls.Add(this.pnlMenu);
             this.pnlBackgroundMenu.Location = new System.Drawing.Point(-1, 0);
-            this.pnlBackgroundMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBackgroundMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBackgroundMenu.Name = "pnlBackgroundMenu";
             this.pnlBackgroundMenu.Size = new System.Drawing.Size(764, 791);
             this.pnlBackgroundMenu.TabIndex = 3;
@@ -59,7 +61,7 @@
             this.pcbMenuCar.BackgroundImage = global::RoadFighter.Properties.Resources.menuCar;
             this.pcbMenuCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbMenuCar.Location = new System.Drawing.Point(4, 468);
-            this.pcbMenuCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcbMenuCar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbMenuCar.Name = "pcbMenuCar";
             this.pcbMenuCar.Size = new System.Drawing.Size(344, 194);
             this.pcbMenuCar.TabIndex = 4;
@@ -74,7 +76,7 @@
             this.pnlMenu.Controls.Add(this.btnOptions);
             this.pnlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMenu.Location = new System.Drawing.Point(164, 15);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(440, 446);
             this.pnlMenu.TabIndex = 2;
@@ -85,24 +87,24 @@
             this.btnQuit.FlatAppearance.BorderSize = 0;
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuit.Location = new System.Drawing.Point(121, 361);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(229, 53);
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit Game";
             this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            this.btnQuit.Click += new System.EventHandler(this.BtnQuitGame_Click);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(96, 48);
+            this.lblName.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(131, 79);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(188, 84);
+            this.lblName.Size = new System.Drawing.Size(198, 104);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "ROAD\r\nFIGHTER";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,13 +116,13 @@
             this.btnStartGame.FlatAppearance.BorderSize = 0;
             this.btnStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStartGame.Location = new System.Drawing.Point(121, 240);
-            this.btnStartGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStartGame.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(229, 53);
             this.btnStartGame.TabIndex = 0;
             this.btnStartGame.Text = "Start Game";
             this.btnStartGame.UseVisualStyleBackColor = false;
-            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_click);
+            this.btnStartGame.Click += new System.EventHandler(this.BtnStartGame_Click);
             // 
             // btnOptions
             // 
@@ -128,7 +130,7 @@
             this.btnOptions.FlatAppearance.BorderSize = 0;
             this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOptions.Location = new System.Drawing.Point(121, 300);
-            this.btnOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.Size = new System.Drawing.Size(229, 53);
             this.btnOptions.TabIndex = 2;
@@ -143,7 +145,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 789);
             this.Controls.Add(this.pnlBackgroundMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoadFighter";

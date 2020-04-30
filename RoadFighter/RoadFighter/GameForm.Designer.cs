@@ -62,6 +62,7 @@
             this.pnlTest = new System.Windows.Forms.Panel();
             this.pcbMiniCar = new System.Windows.Forms.PictureBox();
             this.pcbMiniFinishLine = new System.Windows.Forms.PictureBox();
+            this.lblPause = new System.Windows.Forms.Label();
             this.pnlRoad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbClock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
@@ -124,6 +125,7 @@
             // 
             // pnlRoad
             // 
+            this.pnlRoad.Controls.Add(this.lblPause);
             this.pnlRoad.Controls.Add(this.pcbClock);
             this.pnlRoad.Controls.Add(this.pcbCoin);
             this.pnlRoad.Controls.Add(this.pcbCar);
@@ -447,6 +449,20 @@
             this.pcbMiniFinishLine.TabIndex = 23;
             this.pcbMiniFinishLine.TabStop = false;
             // 
+            // lblPause
+            // 
+            this.lblPause.AutoSize = true;
+            this.lblPause.BackColor = System.Drawing.Color.Transparent;
+            this.lblPause.Enabled = false;
+            this.lblPause.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPause.Location = new System.Drawing.Point(200, 356);
+            this.lblPause.Name = "lblPause";
+            this.lblPause.Size = new System.Drawing.Size(111, 37);
+            this.lblPause.TabIndex = 26;
+            this.lblPause.Text = "PAUSE\r\n";
+            this.lblPause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPause.Visible = false;
+            // 
             // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -525,6 +541,7 @@
         public System.Windows.Forms.PictureBox pcbFlats;
         public System.Windows.Forms.PictureBox pcbHouses;
         public System.Windows.Forms.PictureBox pcbChurch;
+        public System.Windows.Forms.Label lblPause;
     }
 }
 

@@ -12,12 +12,11 @@ namespace RoadFighter
         private GameEngine GameEngine{ get; set; }
         private RoadBox Road { get; set; }
 
-
-        public ClockBox(FrmGame game, GameEngine gameEngine, RoadBox road)
+        public ClockBox(GameEngine gameEngine, RoadBox road)
         {
             GameEngine = gameEngine;
             Road = road;
-            road.ClockElement.Location = road.RandomLocation((int)LocationY.clock);
+            road.ClockElement.Location = road.RandomLocation((int)StaticValues.clockPosition);
             road.ChangeToRound(road.ClockElement);
         }
 
@@ -26,11 +25,11 @@ namespace RoadFighter
             if (Road.ClockElement.Top > Road.Road.Height)
             {
                 Road.ClockElement.Enabled = true;
-                Road.ClockElement.Location = Road.RandomLocation((int)LocationY.clock);
+                Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
 
                 if ((Road.ClockElement.Location.Y == Road.EnemyAuto.Height) || (Road.ClockElement.Location.X == Road.EnemyAuto.Width) || (Road.ClockElement.Bounds.IntersectsWith(Road.EnemyAuto.Bounds)))
                 {
-                    Road.ClockElement.Location = Road.RandomLocation((int)LocationY.clock);
+                    Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
                 }
             }
             else Road.ClockElement.Top += 5;
@@ -43,7 +42,7 @@ namespace RoadFighter
                 GameEngine.Road.Ticks += 10;
                 Road.ClockElement.Enabled = false;
 
-                Road.ClockElement.Location = Road.RandomLocation((int)LocationY.clock);
+                Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
             }
         }
     }
