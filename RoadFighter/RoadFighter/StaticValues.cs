@@ -13,6 +13,7 @@ namespace RoadFighter
         roundStep = 4,
         enemyCarPosition = -250,
         clockPosition = -2000,
+        clockCollected = 10,
         distanceCarOfPanel = 10,
         distanceBetweenLines = 50,
         enemyMinLocationY = -1200,

@@ -45,7 +45,7 @@ namespace RoadFighter
         {
             if (Road.Auto.Bounds.IntersectsWith(Road.ClockElement.Bounds))
             {
-                GameEngine.Road.Ticks += 10;
+                GameEngine.Road.Ticks += (int)StaticValues.clockCollected;
                 Road.ClockElement.Enabled = false;
 
                 Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);

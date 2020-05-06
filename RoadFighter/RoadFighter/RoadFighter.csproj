@@ -69,11 +69,11 @@
     <Compile Include="ControlsForm.Designer.cs">
       <DependentUpon>ControlsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EndGame.cs">
+    <Compile Include="EndGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EndGame.Designer.cs">
-      <DependentUpon>EndGame.cs</DependentUpon>
+    <Compile Include="EndGameForm.Designer.cs">
+      <DependentUpon>EndGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EnemyCarBox.cs" />
     <Compile Include="GameEngine.cs" />
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="ControlsForm.resx">
       <DependentUpon>ControlsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EndGame.resx">
-      <DependentUpon>EndGame.cs</DependentUpon>
+    <EmbeddedResource Include="EndGameForm.resx">
+      <DependentUpon>EndGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameRecordsForm.resx">
       <DependentUpon>GameRecordsForm.cs</DependentUpon>
