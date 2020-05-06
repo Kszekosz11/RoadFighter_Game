@@ -65,7 +65,6 @@
             this.pnlTest = new System.Windows.Forms.Panel();
             this.pcbMiniCar = new System.Windows.Forms.PictureBox();
             this.pcbMiniFinishLine = new System.Windows.Forms.PictureBox();
-            this.tmrEnemies = new System.Windows.Forms.Timer(this.components);
             this.pnlRoad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar2)).BeginInit();
@@ -492,12 +491,6 @@
             this.pcbMiniFinishLine.TabIndex = 23;
             this.pcbMiniFinishLine.TabStop = false;
             // 
-            // tmrEnemies
-            // 
-            this.tmrEnemies.Enabled = true;
-            this.tmrEnemies.Interval = 500;
-            this.tmrEnemies.Tick += new System.EventHandler(this.TmrEnemies_Tick);
-            // 
             // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -581,7 +574,6 @@
         public System.Windows.Forms.Label lblPause;
         public System.Windows.Forms.PictureBox pcbEnemyCar2;
         public System.Windows.Forms.PictureBox pcbEnemyCar3;
-        private System.Windows.Forms.Timer tmrEnemies;
     }
 }
 

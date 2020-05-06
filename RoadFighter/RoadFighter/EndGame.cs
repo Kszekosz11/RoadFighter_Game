@@ -14,8 +14,8 @@ namespace RoadFighter
     {
         public FrmMenu MenuUI { get; }
         public FrmGame ActualGame { get; }
-        private int Score { get; set; }
-        private int Crash { get; set; }
+        private int GameScore { get; set; }
+        private int GameCrash { get; set; }
 
         public FrmEndGame(FrmGame game, FrmMenu menuUI, string description, int score, int crash)
         {
@@ -23,8 +23,8 @@ namespace RoadFighter
             FormSettings.SetSetting(this);            
             ActualGame = game;
             MenuUI = menuUI;
-            Score = score;
-            Crash = crash;
+            GameScore = score;
+            GameCrash = crash;
             lblDescription.Text = description;
             lblScore.Text = "SCORE: " + score.ToString();
         }
@@ -35,8 +35,8 @@ namespace RoadFighter
             FormSettings.SetSetting(this);
             ActualGame = game;
             MenuUI = menuUI;
-            Score = score;
-            Crash = crash;
+            GameScore = score;
+            GameCrash = crash;
             lblDescription.Text = description;
             lblScore.Text = message;
             btnConfirm.Enabled = false;
@@ -64,28 +64,32 @@ namespace RoadFighter
             MenuUI.Close();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            ActualGame.Close();
-        }
-
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
+            string playerName;
+            if (txbYourName.Text == "Your name") playerName = "Guest";
+                else playerName = txbYourName.Text;
+            
             using (var context = new RoadFighterDataEnt())
             {                
                 var score = new GameRecords
                 {
-                    Name = txbYourName.Text,
-                    Score = (short)Score,
-                    Crash = (short)Crash
+                    Name = playerName,
+                    Score = (short)GameScore,
+                    Crash = (short)GameCrash
                 };
                 context.GameRecords.Add(score);
                 context.SaveChanges();
             }
 
-            MessageBox.Show("Zapisano wynik!", "Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Score saved!", "Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnConfirm.Enabled = false;
             txbYourName.Enabled = false;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            ActualGame.Close();
         }
     }
 }

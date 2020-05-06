@@ -13,7 +13,7 @@ namespace RoadFighter
         private Panel Grass { get; set; }
         private PictureBox[] SceneElements { get; set; }
 
-        public GreenBox(FrmGame gameForm)
+        public GreenBox(FrmGame gameForm, Random random)
         {
             GameForm = gameForm;
             Grass = gameForm.pnlGrass;
@@ -26,12 +26,12 @@ namespace RoadFighter
         }
 
         public void DrawScene(double speed)
-        {
+        {            
             for (int i = 0; i < SceneElements.Length; i++)
             {
-                if (SceneElements[i].Top >= GameForm.Height) SceneElements[i].Top = -SceneElements[0].Height;
-                else SceneElements[i].Top += (int)speed;
-            }
+                if (SceneElements[i].Top >= GameForm.Height) SceneElements[i].Top = -(SceneElements[0].Height * (int)StaticValues.newGrassObject);
+                    else SceneElements[i].Top += (int)speed;                
+            }            
         }
     }
 }

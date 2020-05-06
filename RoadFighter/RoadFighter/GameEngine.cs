@@ -27,8 +27,8 @@ namespace RoadFighter
         {
             FormGame = gameForm;
             MenuForm = menuForm;
-            Grass = new GreenBox(FormGame);
             Road = new RoadBox(FormGame, this);
+            Grass = new GreenBox(FormGame, Road.random);
             SceneTimer = gameForm.tmrSceneTimer;
             GameTimer = gameForm.tmrGameTimer;
             FinishGame = gameForm.tmrFinishGame;            

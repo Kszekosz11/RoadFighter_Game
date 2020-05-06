@@ -14,6 +14,11 @@ namespace RoadFighter
         enemyCarPosition = -250,
         clockPosition = -2000,
         distanceCarOfPanel = 10,
-        distanceBetweenLines = 50
+        distanceBetweenLines = 50,
+        enemyMinLocationY = -1200,
+        enemyMaxLocationY = - 100,
+        movementLeft = -1,
+        movementRight = 2,
+        newGrassObject = 10
     }
 }

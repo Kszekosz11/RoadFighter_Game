@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,12 +36,18 @@ namespace RoadFighter
             GameEngine.DistanceToFinish();
             GameEngine.ShowFinishLine();
             GameEngine.GameOver();
+            GameEngine.Road.EnemyCarBox.EnemiesBoundsed();
         }
 
         private void GameTimer_Tick(object sender, EventArgs e)
         {
             GameEngine.GameTime();
-            GameEngine.Road.MiniCarBox.RouteDistanceMiniCar();            
+            GameEngine.Road.MiniCarBox.RouteDistanceMiniCar();
+            
+            for (int i = 0; i < GameEngine.Road.EnemyCarBox.Enemies.Length; i++)
+            {
+                GameEngine.Road.EnemyCarBox.movement[i] = GameEngine.Road.random.Next((int)StaticValues.movementLeft, (int)StaticValues.movementRight);
+            }
         }
 
         private void FinishGame_Tick(object sender, EventArgs e)
@@ -56,11 +63,6 @@ namespace RoadFighter
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             MenuForm.Show();
-        }
-
-        private void TmrEnemies_Tick(object sender, EventArgs e)
-        {           
-            GameEngine.Road.EnemyCarBox.movement = GameEngine.Road.random.Next(GameEngine.Road.EnemyCarBox.left, GameEngine.Road.EnemyCarBox.right);
         }
     }
 }

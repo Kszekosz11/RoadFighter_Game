@@ -26,15 +26,15 @@ namespace RoadFighter
             {
                 var records = context.GameRecords.Select(x => new
                 {
-                    x.Score,
                     x.Name,
-                    x.GameID,
-                    x.Crash
+                    x.Score,
+                    x.Crash,
+                    x.GameID
                 })
                 .OrderByDescending(x => x.Score)
                 .ToList();
                 
-                dtvRecords.DataSource = records;
+                dtgRecords.DataSource = records;
             }           
         }
 

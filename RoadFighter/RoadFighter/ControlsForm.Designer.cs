@@ -30,28 +30,28 @@
         {
             System.Windows.Forms.Button btnBack;
             this.pnlInstruction = new System.Windows.Forms.Panel();
+            this.lblEnemyDesc = new System.Windows.Forms.Label();
+            this.lblTimeDesc = new System.Windows.Forms.Label();
             this.lblSpace = new System.Windows.Forms.Label();
+            this.lblCoinDesc = new System.Windows.Forms.Label();
             this.pcbKeys = new System.Windows.Forms.PictureBox();
+            this.pcbEnemy = new System.Windows.Forms.PictureBox();
             this.pcbSpacebar = new System.Windows.Forms.PictureBox();
+            this.pcbTime = new System.Windows.Forms.PictureBox();
             this.lblRight = new System.Windows.Forms.Label();
+            this.pcbCoin = new System.Windows.Forms.PictureBox();
             this.lblForward = new System.Windows.Forms.Label();
             this.pcbMenuCar = new System.Windows.Forms.PictureBox();
             this.lblLeft = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
-            this.lblEnemyDesc = new System.Windows.Forms.Label();
-            this.lblTimeDesc = new System.Windows.Forms.Label();
-            this.lblCoinDesc = new System.Windows.Forms.Label();
-            this.pcbEnemy = new System.Windows.Forms.PictureBox();
-            this.pcbTime = new System.Windows.Forms.PictureBox();
-            this.pcbCoin = new System.Windows.Forms.PictureBox();
             btnBack = new System.Windows.Forms.Button();
             this.pnlInstruction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbKeys)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbSpacebar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSpacebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -92,6 +92,28 @@
             this.pnlInstruction.Size = new System.Drawing.Size(760, 791);
             this.pnlInstruction.TabIndex = 12;
             // 
+            // lblEnemyDesc
+            // 
+            this.lblEnemyDesc.AutoSize = true;
+            this.lblEnemyDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnemyDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEnemyDesc.Location = new System.Drawing.Point(442, 309);
+            this.lblEnemyDesc.Name = "lblEnemyDesc";
+            this.lblEnemyDesc.Size = new System.Drawing.Size(207, 20);
+            this.lblEnemyDesc.TabIndex = 5;
+            this.lblEnemyDesc.Text = "-5 seconds if you crash";
+            // 
+            // lblTimeDesc
+            // 
+            this.lblTimeDesc.AutoSize = true;
+            this.lblTimeDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTimeDesc.Location = new System.Drawing.Point(77, 333);
+            this.lblTimeDesc.Name = "lblTimeDesc";
+            this.lblTimeDesc.Size = new System.Drawing.Size(230, 20);
+            this.lblTimeDesc.TabIndex = 4;
+            this.lblTimeDesc.Text = "+10 seconds if you collect";
+            // 
             // lblSpace
             // 
             this.lblSpace.AutoSize = true;
@@ -101,7 +123,18 @@
             this.lblSpace.Name = "lblSpace";
             this.lblSpace.Size = new System.Drawing.Size(70, 20);
             this.lblSpace.TabIndex = 11;
-            this.lblSpace.Text = "PAUSE";            
+            this.lblSpace.Text = "PAUSE";
+            // 
+            // lblCoinDesc
+            // 
+            this.lblCoinDesc.AutoSize = true;
+            this.lblCoinDesc.BackColor = System.Drawing.Color.Transparent;
+            this.lblCoinDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCoinDesc.Location = new System.Drawing.Point(82, 286);
+            this.lblCoinDesc.Name = "lblCoinDesc";
+            this.lblCoinDesc.Size = new System.Drawing.Size(191, 20);
+            this.lblCoinDesc.TabIndex = 3;
+            this.lblCoinDesc.Text = "+1 point if you collect";
             // 
             // pcbKeys
             // 
@@ -114,6 +147,17 @@
             this.pcbKeys.TabIndex = 9;
             this.pcbKeys.TabStop = false;
             // 
+            // pcbEnemy
+            // 
+            this.pcbEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.pcbEnemy.BackgroundImage = global::RoadFighter.Properties.Resources.enemyCar;
+            this.pcbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEnemy.Location = new System.Drawing.Point(376, 276);
+            this.pcbEnemy.Name = "pcbEnemy";
+            this.pcbEnemy.Size = new System.Drawing.Size(45, 87);
+            this.pcbEnemy.TabIndex = 2;
+            this.pcbEnemy.TabStop = false;
+            // 
             // pcbSpacebar
             // 
             this.pcbSpacebar.BackgroundImage = global::RoadFighter.Properties.Resources.spacebar;
@@ -123,6 +167,17 @@
             this.pcbSpacebar.Size = new System.Drawing.Size(216, 33);
             this.pcbSpacebar.TabIndex = 10;
             this.pcbSpacebar.TabStop = false;
+            // 
+            // pcbTime
+            // 
+            this.pcbTime.BackColor = System.Drawing.Color.Transparent;
+            this.pcbTime.BackgroundImage = global::RoadFighter.Properties.Resources.time;
+            this.pcbTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbTime.Location = new System.Drawing.Point(22, 323);
+            this.pcbTime.Name = "pcbTime";
+            this.pcbTime.Size = new System.Drawing.Size(40, 40);
+            this.pcbTime.TabIndex = 1;
+            this.pcbTime.TabStop = false;
             // 
             // lblRight
             // 
@@ -134,6 +189,17 @@
             this.lblRight.Size = new System.Drawing.Size(66, 20);
             this.lblRight.TabIndex = 8;
             this.lblRight.Text = "RIGHT";
+            // 
+            // pcbCoin
+            // 
+            this.pcbCoin.BackColor = System.Drawing.Color.Transparent;
+            this.pcbCoin.BackgroundImage = global::RoadFighter.Properties.Resources.coin;
+            this.pcbCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbCoin.Location = new System.Drawing.Point(22, 276);
+            this.pcbCoin.Name = "pcbCoin";
+            this.pcbCoin.Size = new System.Drawing.Size(40, 40);
+            this.pcbCoin.TabIndex = 0;
+            this.pcbCoin.TabStop = false;
             // 
             // lblForward
             // 
@@ -180,72 +246,6 @@
             this.lblBack.TabIndex = 6;
             this.lblBack.Text = "BACK";
             // 
-            // lblEnemyDesc
-            // 
-            this.lblEnemyDesc.AutoSize = true;
-            this.lblEnemyDesc.BackColor = System.Drawing.Color.Transparent;
-            this.lblEnemyDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEnemyDesc.Location = new System.Drawing.Point(442, 309);
-            this.lblEnemyDesc.Name = "lblEnemyDesc";
-            this.lblEnemyDesc.Size = new System.Drawing.Size(227, 20);
-            this.lblEnemyDesc.TabIndex = 5;
-            this.lblEnemyDesc.Text = "-5 seconds if you crashed";
-            // 
-            // lblTimeDesc
-            // 
-            this.lblTimeDesc.AutoSize = true;
-            this.lblTimeDesc.BackColor = System.Drawing.Color.Transparent;
-            this.lblTimeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTimeDesc.Location = new System.Drawing.Point(77, 333);
-            this.lblTimeDesc.Name = "lblTimeDesc";
-            this.lblTimeDesc.Size = new System.Drawing.Size(250, 20);
-            this.lblTimeDesc.TabIndex = 4;
-            this.lblTimeDesc.Text = "+10 seconds if you collected";
-            // 
-            // lblCoinDesc
-            // 
-            this.lblCoinDesc.AutoSize = true;
-            this.lblCoinDesc.BackColor = System.Drawing.Color.Transparent;
-            this.lblCoinDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCoinDesc.Location = new System.Drawing.Point(82, 286);
-            this.lblCoinDesc.Name = "lblCoinDesc";
-            this.lblCoinDesc.Size = new System.Drawing.Size(211, 20);
-            this.lblCoinDesc.TabIndex = 3;
-            this.lblCoinDesc.Text = "+1 point if you collected";
-            // 
-            // pcbEnemy
-            // 
-            this.pcbEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.pcbEnemy.BackgroundImage = global::RoadFighter.Properties.Resources.enemyCar;
-            this.pcbEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbEnemy.Location = new System.Drawing.Point(376, 276);
-            this.pcbEnemy.Name = "pcbEnemy";
-            this.pcbEnemy.Size = new System.Drawing.Size(45, 87);
-            this.pcbEnemy.TabIndex = 2;
-            this.pcbEnemy.TabStop = false;
-            // 
-            // pcbTime
-            // 
-            this.pcbTime.BackColor = System.Drawing.Color.Transparent;
-            this.pcbTime.BackgroundImage = global::RoadFighter.Properties.Resources.time;
-            this.pcbTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbTime.Location = new System.Drawing.Point(22, 323);
-            this.pcbTime.Name = "pcbTime";
-            this.pcbTime.Size = new System.Drawing.Size(40, 40);
-            this.pcbTime.TabIndex = 1;
-            this.pcbTime.TabStop = false;
-            // 
-            // pcbCoin
-            // 
-            this.pcbCoin.BackColor = System.Drawing.Color.Transparent;
-            this.pcbCoin.BackgroundImage = global::RoadFighter.Properties.Resources.coin;
-            this.pcbCoin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbCoin.Location = new System.Drawing.Point(22, 276);
-            this.pcbCoin.Name = "pcbCoin";
-            this.pcbCoin.Size = new System.Drawing.Size(40, 40);
-            this.pcbCoin.TabIndex = 0;
-            this.pcbCoin.TabStop = false;
-            // 
             // FrmControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -259,11 +259,11 @@
             this.pnlInstruction.ResumeLayout(false);
             this.pnlInstruction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbKeys)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbSpacebar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbSpacebar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMenuCar)).EndInit();
             this.ResumeLayout(false);
 
         }
