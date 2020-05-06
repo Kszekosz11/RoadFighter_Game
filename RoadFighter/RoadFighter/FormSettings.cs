@@ -13,6 +13,7 @@ namespace RoadFighter
         {
             form.FormBorderStyle = FormBorderStyle.FixedSingle;
             form.MaximizeBox = false;
+            form.Text = "RoadFighter";
         }
     }
 }

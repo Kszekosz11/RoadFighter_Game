@@ -17,22 +17,28 @@ namespace RoadFighter
             GameEngine = gameEngine;
             Road = road;
             road.ClockElement.Location = road.RandomLocation((int)StaticValues.clockPosition);
-            road.ChangeToRound(road.ClockElement);
+            road.DrawRoundedControl(road.ClockElement);
         }
 
-        public void ClockControl()
+        public void ClockControl(double speed)
         {
-            if (Road.ClockElement.Top > Road.Road.Height)
+            for (int i = 0; i < Road.EnemyCars.Length; i++)
             {
-                Road.ClockElement.Enabled = true;
-                Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
-
-                if ((Road.ClockElement.Location.Y == Road.EnemyAuto.Height) || (Road.ClockElement.Location.X == Road.EnemyAuto.Width) || (Road.ClockElement.Bounds.IntersectsWith(Road.EnemyAuto.Bounds)))
+                if (Road.ClockElement.Top > Road.Road.Height)
                 {
+                    Road.ClockElement.Enabled = true;
                     Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
+
+                    if ((Road.ClockElement.Location.Y == Road.EnemyCars[i].Height) || (Road.ClockElement.Location.X == Road.EnemyCars[i].Width) || (Road.ClockElement.Bounds.IntersectsWith(Road.EnemyCars[i].Bounds)))
+                    {
+                        Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
+                    }
                 }
-            }
-            else Road.ClockElement.Top += 5;
+                else if (GameEngine.SpeedGame >= 1)
+                {
+                    Road.ClockElement.Top += (int)speed / (int)StaticValues.roundStep;
+                } 
+            }            
         }
 
         public void ClockCollected()

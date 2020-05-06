@@ -27,6 +27,20 @@ namespace RoadFighter
             startGame.Show();            
         }
 
+        private void BtnControls_Click(object sender, EventArgs e)
+        {
+            FrmControls frmControls = new FrmControls(this);
+            this.Hide();
+            frmControls.Show();
+        }
+
+        private void BtnRecords_Click(object sender, EventArgs e)
+        {
+            FrmGameRecords frmGameRecords = new FrmGameRecords(this);
+            this.Hide();
+            frmGameRecords.Show();
+        }
+
         private void BtnQuitGame_Click(object sender, EventArgs e)
         {
             this.Close();

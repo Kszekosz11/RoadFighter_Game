@@ -24,17 +24,23 @@ namespace RoadFighter
         public void CarControl(KeyEventArgs e)
         {
             switch (e.KeyCode)
-            {
+            {                
                 case Keys.Left:
                     if (GameEngine.SceneTimer.Enabled == true)
                     {
-                        if (Car.Left > (int)StaticValues.distanceCarOfPanel) Car.Left -= (int)StaticValues.carStep;
+                        if (GameEngine.SpeedGame >= 1)
+                        {
+                            if (Car.Left > (int)StaticValues.distanceCarOfPanel) Car.Left -= (int)StaticValues.carStep;
+                        }                            
                     }                        
                     break;
                 case Keys.Right:
                     if (GameEngine.SceneTimer.Enabled == true)
                     {
-                        if (Car.Right < Road.Road.Width - (int)StaticValues.distanceCarOfPanel) Car.Left += (int)StaticValues.carStep;
+                        if (GameEngine.SpeedGame >= 1)
+                        {
+                            if (Car.Right < Road.Road.Width - (int)StaticValues.distanceCarOfPanel) Car.Left += (int)StaticValues.carStep;
+                        }                        
                     }                        
                     break;
                 case Keys.Up:
@@ -46,26 +52,23 @@ namespace RoadFighter
                         {
                             if (GameEngine.SpeedGame <= GameEngine.SpeedMax)
                             {
-                                GameEngine.SpeedGame += 1;
-                                if (Road.FinishLine.Visible == true)
-                                {
-                                    Car.Top -= (int)StaticValues.carStep;
-                                }
+                                GameEngine.SpeedGame += 0.5;
+                                if (Road.FinishLine.Visible == true) Car.Top -= (int)StaticValues.carStep;                                    
                             }
                             Car.Top -= 5;
                         }                
                     break;
                 case Keys.Down:
                     if (GameEngine.SceneTimer.Enabled == true)
-                    {
+                    {                        
                         if (Car.Top < Road.Road.Height - Car.Height - (int)StaticValues.distanceCarOfPanel)
                         {
                             if (GameEngine.SpeedGame >= GameEngine.SpeedMin)
                             {
-                                GameEngine.SpeedGame -= 1;
+                                GameEngine.SpeedGame -= 0.25;
                                 Car.Top += 5;
                             }
-                        }
+                        }                                                
                     }                        
                     break;
                 case Keys.Space:

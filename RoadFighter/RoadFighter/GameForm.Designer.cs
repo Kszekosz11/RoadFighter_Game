@@ -35,10 +35,13 @@
             this.lblPoints = new System.Windows.Forms.Label();
             this.tmrGameTimer = new System.Windows.Forms.Timer(this.components);
             this.pnlRoad = new System.Windows.Forms.Panel();
+            this.lblPause = new System.Windows.Forms.Label();
+            this.pcbEnemyCar3 = new System.Windows.Forms.PictureBox();
+            this.pcbEnemyCar2 = new System.Windows.Forms.PictureBox();
+            this.pcbEnemyCar = new System.Windows.Forms.PictureBox();
             this.pcbClock = new System.Windows.Forms.PictureBox();
             this.pcbCoin = new System.Windows.Forms.PictureBox();
             this.pcbCar = new System.Windows.Forms.PictureBox();
-            this.pcbEnemyCar = new System.Windows.Forms.PictureBox();
             this.lblDistance = new System.Windows.Forms.Label();
             this.pcbFinishLine = new System.Windows.Forms.PictureBox();
             this.pnlLeftLines = new System.Windows.Forms.Panel();
@@ -62,12 +65,14 @@
             this.pnlTest = new System.Windows.Forms.Panel();
             this.pcbMiniCar = new System.Windows.Forms.PictureBox();
             this.pcbMiniFinishLine = new System.Windows.Forms.PictureBox();
-            this.lblPause = new System.Windows.Forms.Label();
+            this.tmrEnemies = new System.Windows.Forms.Timer(this.components);
             this.pnlRoad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbClock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinishLine)).BeginInit();
             this.pnlLeftLines.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLine1)).BeginInit();
@@ -100,7 +105,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTime.Location = new System.Drawing.Point(215, 11);
+            this.lblTime.Location = new System.Drawing.Point(204, 11);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(70, 29);
@@ -126,21 +131,70 @@
             // pnlRoad
             // 
             this.pnlRoad.Controls.Add(this.lblPause);
+            this.pnlRoad.Controls.Add(this.pcbEnemyCar3);
+            this.pnlRoad.Controls.Add(this.pcbEnemyCar2);
+            this.pnlRoad.Controls.Add(this.pcbEnemyCar);
             this.pnlRoad.Controls.Add(this.pcbClock);
             this.pnlRoad.Controls.Add(this.pcbCoin);
             this.pnlRoad.Controls.Add(this.pcbCar);
-            this.pnlRoad.Controls.Add(this.pcbEnemyCar);
             this.pnlRoad.Controls.Add(this.lblDistance);
             this.pnlRoad.Controls.Add(this.pcbFinishLine);
             this.pnlRoad.Controls.Add(this.lblPoints);
             this.pnlRoad.Controls.Add(this.lblTime);
             this.pnlRoad.Controls.Add(this.pnlLeftLines);
             this.pnlRoad.Controls.Add(this.pnlRightLines);
-            this.pnlRoad.Location = new System.Drawing.Point(280, 0);
+            this.pnlRoad.Location = new System.Drawing.Point(280, 1);
             this.pnlRoad.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoad.Name = "pnlRoad";
             this.pnlRoad.Size = new System.Drawing.Size(533, 788);
             this.pnlRoad.TabIndex = 24;
+            // 
+            // lblPause
+            // 
+            this.lblPause.AutoSize = true;
+            this.lblPause.BackColor = System.Drawing.Color.Transparent;
+            this.lblPause.Enabled = false;
+            this.lblPause.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPause.Location = new System.Drawing.Point(193, 377);
+            this.lblPause.Name = "lblPause";
+            this.lblPause.Size = new System.Drawing.Size(111, 37);
+            this.lblPause.TabIndex = 26;
+            this.lblPause.Text = "PAUSE\r\n";
+            this.lblPause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPause.Visible = false;
+            // 
+            // pcbEnemyCar3
+            // 
+            this.pcbEnemyCar3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemyCar3.BackgroundImage")));
+            this.pcbEnemyCar3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEnemyCar3.Location = new System.Drawing.Point(35, 163);
+            this.pcbEnemyCar3.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbEnemyCar3.Name = "pcbEnemyCar3";
+            this.pcbEnemyCar3.Size = new System.Drawing.Size(67, 105);
+            this.pcbEnemyCar3.TabIndex = 28;
+            this.pcbEnemyCar3.TabStop = false;
+            // 
+            // pcbEnemyCar2
+            // 
+            this.pcbEnemyCar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemyCar2.BackgroundImage")));
+            this.pcbEnemyCar2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEnemyCar2.Location = new System.Drawing.Point(421, 162);
+            this.pcbEnemyCar2.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbEnemyCar2.Name = "pcbEnemyCar2";
+            this.pcbEnemyCar2.Size = new System.Drawing.Size(67, 105);
+            this.pcbEnemyCar2.TabIndex = 27;
+            this.pcbEnemyCar2.TabStop = false;
+            // 
+            // pcbEnemyCar
+            // 
+            this.pcbEnemyCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemyCar.BackgroundImage")));
+            this.pcbEnemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEnemyCar.Location = new System.Drawing.Point(220, 162);
+            this.pcbEnemyCar.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbEnemyCar.Name = "pcbEnemyCar";
+            this.pcbEnemyCar.Size = new System.Drawing.Size(67, 105);
+            this.pcbEnemyCar.TabIndex = 13;
+            this.pcbEnemyCar.TabStop = false;
             // 
             // pcbClock
             // 
@@ -179,22 +233,11 @@
             this.pcbCar.TabIndex = 12;
             this.pcbCar.TabStop = false;
             // 
-            // pcbEnemyCar
-            // 
-            this.pcbEnemyCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbEnemyCar.BackgroundImage")));
-            this.pcbEnemyCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbEnemyCar.Location = new System.Drawing.Point(220, 162);
-            this.pcbEnemyCar.Margin = new System.Windows.Forms.Padding(4);
-            this.pcbEnemyCar.Name = "pcbEnemyCar";
-            this.pcbEnemyCar.Size = new System.Drawing.Size(67, 105);
-            this.pcbEnemyCar.TabIndex = 13;
-            this.pcbEnemyCar.TabStop = false;
-            // 
             // lblDistance
             // 
             this.lblDistance.AutoSize = true;
             this.lblDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDistance.Location = new System.Drawing.Point(377, 11);
+            this.lblDistance.Location = new System.Drawing.Point(376, 11);
             this.lblDistance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDistance.Name = "lblDistance";
             this.lblDistance.Size = new System.Drawing.Size(111, 29);
@@ -429,7 +472,7 @@
             this.pcbMiniCar.BackColor = System.Drawing.Color.Transparent;
             this.pcbMiniCar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbMiniCar.BackgroundImage")));
             this.pcbMiniCar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbMiniCar.Location = new System.Drawing.Point(23, 660);
+            this.pcbMiniCar.Location = new System.Drawing.Point(22, 725);
             this.pcbMiniCar.Margin = new System.Windows.Forms.Padding(4);
             this.pcbMiniCar.Name = "pcbMiniCar";
             this.pcbMiniCar.Size = new System.Drawing.Size(35, 62);
@@ -449,19 +492,11 @@
             this.pcbMiniFinishLine.TabIndex = 23;
             this.pcbMiniFinishLine.TabStop = false;
             // 
-            // lblPause
+            // tmrEnemies
             // 
-            this.lblPause.AutoSize = true;
-            this.lblPause.BackColor = System.Drawing.Color.Transparent;
-            this.lblPause.Enabled = false;
-            this.lblPause.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPause.Location = new System.Drawing.Point(200, 356);
-            this.lblPause.Name = "lblPause";
-            this.lblPause.Size = new System.Drawing.Size(111, 37);
-            this.lblPause.TabIndex = 26;
-            this.lblPause.Text = "PAUSE\r\n";
-            this.lblPause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPause.Visible = false;
+            this.tmrEnemies.Enabled = true;
+            this.tmrEnemies.Interval = 500;
+            this.tmrEnemies.Tick += new System.EventHandler(this.TmrEnemies_Tick);
             // 
             // FrmGame
             // 
@@ -479,10 +514,12 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeysHandling);
             this.pnlRoad.ResumeLayout(false);
             this.pnlRoad.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbClock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCoin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbEnemyCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFinishLine)).EndInit();
             this.pnlLeftLines.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLine1)).EndInit();
@@ -542,6 +579,9 @@
         public System.Windows.Forms.PictureBox pcbHouses;
         public System.Windows.Forms.PictureBox pcbChurch;
         public System.Windows.Forms.Label lblPause;
+        public System.Windows.Forms.PictureBox pcbEnemyCar2;
+        public System.Windows.Forms.PictureBox pcbEnemyCar3;
+        private System.Windows.Forms.Timer tmrEnemies;
     }
 }
 

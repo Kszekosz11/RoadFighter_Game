@@ -33,3 +33,10 @@ D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmEndGame.resource
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmEndGame.resources
 E:\Semestr IV\Programowanie IV\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.frmMenuForm.resources
 D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.FrmMenu.resources
+D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.FrmControls.resources
+D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\EntityFramework.dll
+D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\EntityFramework.SqlServer.dll
+D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\EntityFramework.xml
+D:\RoadFighter\RoadFighter\RoadFighter\bin\Debug\EntityFramework.SqlServer.xml
+D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.csproj.CopyComplete
+D:\RoadFighter\RoadFighter\RoadFighter\obj\Debug\RoadFighter.FrmGameRecords.resources

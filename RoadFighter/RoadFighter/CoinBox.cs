@@ -9,28 +9,36 @@ namespace RoadFighter
 {
     public class CoinBox
     {
+        private GameEngine GameEngine { get; set; }
         private RoadBox Road { get; set; }       
 
-        public CoinBox(RoadBox road)
-        {            
+        public CoinBox(GameEngine gameEngine, RoadBox road)
+        {
+            GameEngine = gameEngine;
             Road = road;            
             road.CoinControl.Location = road.RandomLocation((int)StaticValues.coinPosition);
-            road.ChangeToRound(road.CoinControl);
+            road.DrawRoundedControl(road.CoinControl);
         }
 
-        public void CoinControl()
+        public void CoinControl(double speed)
         {
-            if (Road.Auto.Top > Road.Road.Height)
+            for (int i = 0; i < Road.EnemyCars.Length; i++)
             {
-                Road.CoinControl.Enabled = true;
-                Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
-
-                if ((Road.CoinControl.Location.Y == Road.EnemyAuto.Height) || (Road.CoinControl.Location.X == Road.EnemyAuto.Width) || (Road.CoinControl.Bounds.IntersectsWith(Road.EnemyAuto.Bounds)))
+                if (Road.Auto.Top > Road.Road.Height)
                 {
+                    Road.CoinControl.Enabled = true;
                     Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
+
+                    if ((Road.CoinControl.Location.Y == Road.EnemyCars[i].Height) || (Road.CoinControl.Location.X == Road.EnemyCars[i].Width) || (Road.CoinControl.Bounds.IntersectsWith(Road.EnemyCars[i].Bounds)))
+                    {
+                        Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
+                    }
                 }
-            }
-            else Road.CoinControl.Top += 5;
+                else if (GameEngine.SpeedGame >= 1)
+                {
+                    Road.CoinControl.Top += (int)speed / (int)StaticValues.roundStep;
+                } 
+            }                        
         }
 
         public void CoinCollected()
@@ -40,6 +48,10 @@ namespace RoadFighter
                 Road.PointQuantity++;
                 Road.Points.Text = "Points: " + Road.PointQuantity.ToString();
                 Road.CoinControl.Enabled = false;
+                Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
+            }
+            else if (Road.CoinControl.Top > Road.Road.Height)
+            {
                 Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
             }
         }

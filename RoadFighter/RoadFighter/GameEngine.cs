@@ -18,9 +18,10 @@ namespace RoadFighter
         public Timer SceneTimer { get; set; }
         public Timer GameTimer { get; set; }
         public Timer FinishGame { get; set; }
-        public int SpeedGame { get; set; }
-        public int SpeedMax { get; set; }
-        public int SpeedMin { get; set; }
+        public double SpeedGame { get; set; }
+        public double SpeedMax { get; set; }
+        public double SpeedMin { get; set; }
+        public int Crash { get; set; }
 
         public GameEngine(FrmGame gameForm, FrmMenu menuForm)
         {
@@ -34,6 +35,7 @@ namespace RoadFighter
             SpeedGame = 5;
             SpeedMax = 10;
             SpeedMin = 1;
+            Crash = 0;
         }
 
         public void GameTime()
@@ -50,7 +52,7 @@ namespace RoadFighter
                 SceneTimer.Enabled = false;
                 GameTimer.Enabled = false;
 
-                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "TIMEOUT");
+                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "TIMEOUT", Road.PointQuantity, Crash, "Try Again");
                 FormGame.Enabled = false;
                 endGame.Show();
             }
@@ -60,8 +62,12 @@ namespace RoadFighter
         {
             if (Road.RouteDistance > 0)
             {
-                Road.RouteDistance -= ((double)SpeedGame / 500);
-                Road.Distance.Text = string.Format("{0:F2}{1}", Road.RouteDistance, " km");
+                if (SpeedGame < 1) Road.Distance.Text = string.Format("{0:F2}{1}", Road.RouteDistance, " km");
+                else
+                {
+                    Road.RouteDistance -= ((double)SpeedGame / 500);
+                    Road.Distance.Text = string.Format("{0:F2}{1}", Road.RouteDistance, " km");
+                }                             
             }
             else Road.Distance.Text = "0 km";
         }
@@ -92,7 +98,7 @@ namespace RoadFighter
             else
             {
                 FinishGame.Stop();
-                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "WINNER");
+                FrmEndGame endGame = new FrmEndGame(FormGame, MenuForm, "WINNER", Road.PointQuantity, Crash);
                 FormGame.Enabled = false;
                 endGame.Show();
             }
@@ -104,32 +110,42 @@ namespace RoadFighter
             {
                 SceneTimer.Stop();
                 GameTimer.Stop();
-                FormGame.lblPause.Enabled = true;
-                FormGame.Visible = true;
+                Road.Pause.Enabled = true;
+                Road.Pause.Visible = true;
             }
             else
             {
                 SceneTimer.Start();
                 GameTimer.Start();
-                FormGame.lblPause.Enabled = false;
-                FormGame.lblPause.Visible = false;
+                Road.Pause.Enabled = false;
+                Road.Pause.Visible = false;
             }
         }
 
         public void GameOver()
         {
-            if (Road.Auto.Bounds.IntersectsWith(Road.EnemyAuto.Bounds))
+            for (int i = 0; i < Road.EnemyCars.Length; i++)
             {
-                SceneTimer.Enabled = false;
-                GameTimer.Enabled = false;
+                if (Road.Auto.Bounds.IntersectsWith(Road.EnemyCars[i].Bounds))
+                {
+                    SceneTimer.Enabled = false;
+                    GameTimer.Enabled = false;
+                    Crash++;
 
-                SpeedGame = 0;
-                Road.EnemyAuto.Location = Road.RandomLocation((int)StaticValues.enemyCarPosition);                
-                Road.Auto.Location = new Point(165, 543);
+                    SpeedGame = 0;
+                    for (int j = 0; j < Road.EnemyCars.Length; j++)
+                    {
+                        Road.EnemyCars[j].Location = Road.RandomLocation(Road.random.Next(-1000, -250));
+                    }                    
+                    Road.Auto.Location = new Point(165, 543);
+                    Road.CoinControl.Location = Road.RandomLocation((int)StaticValues.coinPosition);
+                    Road.ClockElement.Location = Road.RandomLocation((int)StaticValues.clockPosition);
 
-                Road.Ticks -= 5;
-                SpeedGame = 1;
+                    Road.Ticks -= 5;
+                    SpeedGame = 1;
+                }
             }
+            
         }
     }
 }

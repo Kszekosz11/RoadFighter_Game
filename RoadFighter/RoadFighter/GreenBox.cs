@@ -25,7 +25,7 @@ namespace RoadFighter
             }
         }
 
-        public void DrawScene(int speed)
+        public void DrawScene(double speed)
         {
             for (int i = 0; i < SceneElements.Length; i++)
             {

@@ -12,7 +12,6 @@ namespace RoadFighter
     {
         public PictureBox MiniCarAuto { get; set; }
         public PictureBox MiniFinishLine { get; set; }
-
         private RoadBox Road { get; set; }
 
         public MiniCarBox(FrmGame gameForm, RoadBox road)
@@ -24,15 +23,8 @@ namespace RoadFighter
 
         public void RouteDistanceMiniCar()
         {
-            if (MiniCarAuto.Bounds.IntersectsWith(MiniFinishLine.Bounds))
-            {
-                MiniCarAuto.Top -= 0;
-            }
-            else MiniCarAuto.Location = new Point(23, (int)Road.RouteDistance * 10);
-
-            // FINISHLINE LOCATION Y = 50 HEIGHT 10
-            // MINICAR LOCATION Y = 660
-            // 660 - 60 = 600
+            if (MiniCarAuto.Bounds.IntersectsWith(MiniFinishLine.Bounds)) MiniCarAuto.Top -= 0;
+                else MiniCarAuto.Location = new Point(16, (int)Road.RouteDistance * 10);
         }
     }
 }
