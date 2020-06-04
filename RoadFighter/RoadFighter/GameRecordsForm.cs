@@ -22,20 +22,27 @@ namespace RoadFighter
             FormSettings.SetSetting(this);
             MenuForm = frmMenu;
 
-            using (var context = new RoadFighterDataEnt())
+            try
             {
-                var records = context.GameRecords.Select(x => new
+                using (var context = new RoadFighterDataEnt())
                 {
-                    x.Name,
-                    x.Score,
-                    x.Crash,
-                    x.GameID
-                })
-                .OrderByDescending(x => x.Score)
-                .ToList();
-                
-                dtgRecords.DataSource = records;
-            }           
+                    var records = context.GameRecords.Select(x => new
+                    {
+                        x.Name,
+                        x.Score,
+                        x.Crash,
+                        x.GameID
+                    })
+                    .OrderByDescending(x => x.Score)
+                    .ToList();
+
+                    dtgRecords.DataSource = records;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nie udało się połączyć z bazą danych");
+            }
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -47,6 +54,6 @@ namespace RoadFighter
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             MenuForm.Show();
-        }        
+        }
     }
 }

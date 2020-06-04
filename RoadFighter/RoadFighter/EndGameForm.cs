@@ -20,7 +20,7 @@ namespace RoadFighter
         public FrmEndGame(FrmGame game, FrmMenu menuUI, string description, int score, int crash)
         {
             InitializeComponent();
-            FormSettings.SetSetting(this);            
+            FormSettings.SetSetting(this);
             ActualGame = game;
             MenuUI = menuUI;
             GameScore = score;
@@ -68,23 +68,31 @@ namespace RoadFighter
         {
             string playerName;
             if (txbYourName.Text == "Your name") playerName = "Guest";
-                else playerName = txbYourName.Text;
-            
-            using (var context = new RoadFighterDataEnt())
-            {                
-                var score = new GameRecords
-                {
-                    Name = playerName,
-                    Score = (short)GameScore,
-                    Crash = (short)GameCrash
-                };
-                context.GameRecords.Add(score);
-                context.SaveChanges();
-            }
+            else playerName = txbYourName.Text;
 
-            MessageBox.Show("Score saved!", "Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnConfirm.Enabled = false;
-            txbYourName.Enabled = false;
+            try
+            {
+                using (var context = new RoadFighterDataEnt())
+                {
+
+                    var score = new GameRecords
+                    {
+                        Name = playerName,
+                        Score = (short)GameScore,
+                        Crash = (short)GameCrash
+                    };
+                    context.GameRecords.Add(score);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Score saved!", "Score", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnConfirm.Enabled = false;
+                    txbYourName.Enabled = false;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nie udało się połączyć z bazą danych");
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
