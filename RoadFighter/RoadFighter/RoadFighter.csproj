@@ -222,6 +222,11 @@
       <DependentUpon>RoadFighterDataModel.edmx</DependentUpon>
       <LastGenOutput>RoadFighterDataModel.cs</LastGenOutput>
     </Content>
+    <Content Include="ScreenShots\rf_1.png" />
+    <Content Include="ScreenShots\rf_2.png" />
+    <Content Include="ScreenShots\rf_3.png" />
+    <Content Include="ScreenShots\rf_4.png" />
+    <Content Include="ScreenShots\rf_5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
