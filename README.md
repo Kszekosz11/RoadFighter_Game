@@ -5,22 +5,17 @@ It's a game in the likeness of Road Fighter
 
 ### Photos:
 
-* Menu:
-
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_1.png)
-
-* Game:
+> Menu game
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_2.png)
+> Game
 
-* Pause & finish:
- 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_3.png)
-
-* Save your score:
+> We can pause the game
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_4.png)
-
-* Records table:
+> We can save your score
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_5.png)
+> We can show list records
