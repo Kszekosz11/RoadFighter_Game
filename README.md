@@ -3,7 +3,10 @@ It's a game in the likeness of Road Fighter from pegasus.
 * Winforms
 * MsSql + edmx model database
 
-### Photos:
+## Assets
+* Assets comes from https://opengameart.org
+
+## Photos:
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_1.png)
 > Menu game view
