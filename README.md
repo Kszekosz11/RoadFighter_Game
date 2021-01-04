@@ -6,10 +6,10 @@ It's a game in the likeness of Road Fighter from pegasus.
 ### Photos:
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_1.png)
-> Menu game
+> Menu game view
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_2.png)
-> Game
+> Game view
 
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_3.png)
 > We can pause the game
