@@ -1,5 +1,5 @@
 ## Racing Game
-It's a game in the likeness of Road Fighter
+It's a game in the likeness of Road Fighter from pegasus.
 * Winforms
 * MsSql + edmx model database
 
