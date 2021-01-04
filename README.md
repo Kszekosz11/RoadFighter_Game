@@ -1,9 +1,9 @@
-H2 Racing Game
+## Racing Game
 It's a game in the likeness of Road Fighter
 * Winforms
 * MsSql + edmx model database
 
-H3 Photos
+### Photos
 
 * Menu:
 ![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_1.png)
