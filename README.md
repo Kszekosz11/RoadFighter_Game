@@ -1,9 +1,22 @@
-This is my first project with use Git.
+H2 Racing Game
+It's a game in the likeness of Road Fighter
+* Winforms
+* MsSql + edmx model database
 
-C# winforms racing game
+H3 Photos
 
-Test photo:
-
-![](https://github.com/gwalus/RoadFighter_Game/blob/master/images/menuGrass.png)
-
+* Menu:
+![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_1.png)
 > Welcome.
+
+* Game:
+![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_2.png)
+
+ * Pause & finish:
+![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_3.png)
+
+* Save your score:
+![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_4.png)
+
+* Records table:
+![](https://github.com/gwalus/RoadFighter_Game/blob/master/RoadFighter/RoadFighter/ScreenShots/rf_5.png)
